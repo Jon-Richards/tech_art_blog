@@ -34,7 +34,7 @@ framework.
 
 **The Server Side**
 
-The server side is a Django app.  Django was chosen due to Python's
+The server side is a Django project.  Django was chosen due to Python's
 proliferation in the technical art domain, being used for various tools and as
 a glue layer between applications.
 
@@ -48,6 +48,11 @@ The project uses Docker to manage its core dependencies, with
 > This repo includes a Vagrant VM that runs Ubuntu and installs Docker during
 provisioning.  You don't __have__ to use the VM to run te project if your
 system already supports Docker.
+
+**Building an image.**
+```
+$ docker-compose build
+```
 
 **Running the server**
 ```
