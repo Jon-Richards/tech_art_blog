@@ -6,14 +6,16 @@ things relating to technical art.
 
 ## Table of Contents
 
-- [Prerequisites](#prerequisites)
-- [Project Overview](#project_overview)
-- [Running the Project](#running_the_project)
-- [Using the VM](#using_the_vm)
-
+- [Tech Art Blog](#tech-art-blog)
+  - [Table of Contents](#table-of-contents)
+  - [Prerequisites](#prerequisites)
+  - [Project Overview](#project-overview)
+  - [Running The Project](#running-the-project)
+  - [Using the VM](#using-the-vm)
+  - [Additional Notes](#additional-notes)
 
 <a name="prerequisites"></a>
-## Prequisites
+## Prerequisites
 
 - Docker
 - Vagrant (optional)
@@ -25,7 +27,7 @@ things relating to technical art.
 <a name="project_overview"></a>
 ## Project Overview
 
-The project can be summerized into two sections, `client` and `server`:
+The project can be summarized into two sections, `client` and `server`:
 
 **The Client Side**
 
@@ -88,3 +90,10 @@ $ vagrant ssh
 
 The project directory is shared with the VM at `/vagrant`.  Any changes there
 will be reflected on the host machine.
+
+<a name="additional_notes"></a>
+## Additional Notes
+
+- When using static typechecking with the VM, you may need to install the correct
+  version of python and the project's dependencies locally.  Alternatively,
+  consider SSHing into the VM and working from there.
