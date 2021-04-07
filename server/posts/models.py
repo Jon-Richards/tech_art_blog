@@ -11,6 +11,8 @@ class Tag(models.Model):
         return self.name
 
 class Post(models.Model):
+    __image_matcher = '/*\.(jpg|jpeg|png|gif)$'
+
     content = models.TextField(
         blank=False,
         null=False
@@ -45,28 +47,43 @@ class Post(models.Model):
     last_edit_date = models.DateField(blank=True, null=True)
     thumbnail_small = models.FilePathField(
         path=settings.STATIC_URL,
+        match=__image_matcher,
+        recursive=True,
         blank=False,
         null=False
     )
     thumbnail_medium = models.FilePathField(
         path=settings.STATIC_URL,
+        match=__image_matcher,
+        recursive=True,
         blank=False,
         null=False
     )
     thumbnail_large = models.FilePathField(
         path=settings.STATIC_URL,
+        match=__image_matcher,
+        recursive=True,
         blank=False,
         null=False
     )
     javascript_url = models.FilePathField(
         path=settings.STATIC_URL,
+        match='/*\.js$',
+        recursive=True,
+        blank=True,
         null=True
     )
     stylesheet_url = models.FilePathField(
         path=settings.STATIC_URL,
+        match='/*\.css$',
+        recursive=True,
+        blank=True,
         null=True
     )
-    tags = models.ManyToManyField(Tag)
+    tags = models.ManyToManyField(
+        Tag,
+        blank=True
+    )
 
     def __str__(self):
         return self.display_title
