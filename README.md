@@ -10,6 +10,7 @@ things relating to technical art.
   - [Table of Contents](#table-of-contents)
   - [Prerequisites](#prerequisites)
   - [Project Overview](#project-overview)
+  - [Setup](#setup)
   - [Running The Project](#running-the-project)
   - [Using the VM](#using-the-vm)
   - [Additional Notes](#additional-notes)
@@ -39,6 +40,19 @@ framework.
 The server side is a Django project.  Django was chosen due to Python's
 proliferation in the technical art domain, being used for various tools and as
 a glue layer between applications.
+
+> For a primer on getting started with Django, see Django's official on
+> [creating a demo application](https://docs.djangoproject.com/en/3.2/).
+
+
+<a name="setup"></a>
+## Setup
+
+1) Install the [prerequisites](#prerequisites) mentioned above.
+2) Place a `.env` file in the `<project dir>/server` directory.
+   > Absolute paths should be relative to the docker container's working
+     directory, which is `/app`.  
+   > Example: `STATIC_FILES_URL='/app/server/blog/static/'` 
 
 
 <a name="running_the_project"></a>
@@ -90,6 +104,7 @@ $ vagrant ssh
 
 The project directory is shared with the VM at `/vagrant`.  Any changes there
 will be reflected on the host machine.
+
 
 <a name="additional_notes"></a>
 ## Additional Notes

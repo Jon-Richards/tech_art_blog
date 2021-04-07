@@ -1,5 +1,8 @@
 # Notes
 
+> This file is used by the developer for hashing out ideas and defining what
+> to do next.  It should not be regarded as official documentation.
+
 ## Table of Contents
 
 - [Notes](#notes)
@@ -7,8 +10,6 @@
   - [TODO](#todo)
   - [Scribbles](#scribbles)
     - [Apps](#apps)
-      - [Posts](#posts)
-        - [Models](#models)
 
 ## TODO
 
@@ -21,7 +22,10 @@
       - prefer a standard stylesheet
 - [x] Logging - Django has predefined logging, start there.
 - [x] Testing - Uses Python's standard testing library.
-- [ ] Migrations
+- [x] Migrations
+- [ ] Echo and link to posts on home page.
+- [ ] Set up home page.
+  - [ ] About, navigation, copyright into etc.
 - [ ] Define how front-end app will work with back end.
   - [ ] build process ect.
 
@@ -32,25 +36,3 @@
 - Client (all things client side)
 - Server
   - Blog (core app)
-
-#### Posts
-
-##### Models
-
-**Post**
-- is_published: boolean
-- markup: long string
-- javascripts: array(string)
-- stylesheets: array(string)
-- title
-- short_description
-- long_description
-
-**Javascripts**
-- url
-
-**Stylesheets**
-- url
-
-**Images**
-- url
