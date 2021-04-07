@@ -1,0 +1,56 @@
+# Posts
+
+## Post
+- content: TextField
+  - Blank: False
+  - Null: False
+- display_title: CharField
+  - Max: 100
+  - Blank: False
+  - Null: False
+- slug_title: SlugField
+  - Max: 100
+  - Blank: False
+  - Null: False
+- subtitle: CharField
+  - Max: 200
+  - Blank: False
+  - Null: False
+- long_description: CharField
+  - Max: 360
+  - Blank: False
+  - Null: False
+- short_description: CharField
+  - Max: 180
+  - Blank: False
+  - Null: False
+- is_published: BooleanField
+  - Null: False
+- publish_date: DateField
+  - Blank: False
+  - Null: False
+- last_edit: DateField
+  - Blank: False
+  - Null: False
+- thumbnail_small: FilePathField
+  - Blank: False
+  - Null: False
+- thumbnail_medium: FilePathField
+  - Blank: False
+  - Null: False
+- thumbnail_large: FilePathField
+  - Blank: False
+  - Null: False
+- javascript_url: FilePathField
+  - Blank: True
+  - Null: True
+- stylesheet_url: FilePathField
+  - Blank: True
+  - Null: True
+- tags: ForeignKey (Tag)
+
+## Tag
+- name: CharField
+  - Blank: False
+  - Null: True
+- posts: ForeignKey (Post)

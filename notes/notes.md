@@ -7,6 +7,8 @@
   - [TODO](#todo)
   - [Scribbles](#scribbles)
     - [Apps](#apps)
+      - [Posts](#posts)
+        - [Models](#models)
 
 ## TODO
 
@@ -29,5 +31,26 @@
 ### Apps
 - Client (all things client side)
 - Server
-  - Blog (core app  )
-  - Posts
+  - Blog (core app)
+
+#### Posts
+
+##### Models
+
+**Post**
+- is_published: boolean
+- markup: long string
+- javascripts: array(string)
+- stylesheets: array(string)
+- title
+- short_description
+- long_description
+
+**Javascripts**
+- url
+
+**Stylesheets**
+- url
+
+**Images**
+- url
