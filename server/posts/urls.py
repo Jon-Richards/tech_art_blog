@@ -2,7 +2,8 @@ from django.urls import path
 
 from . import views
 
+app_name = 'posts'
 urlpatterns = [
-  path('test/', views.banana, name='test'),
+  path('<str:post_slug_title>/', views.detail, name="detail"),
   path('', views.index, name='index'),
 ]
