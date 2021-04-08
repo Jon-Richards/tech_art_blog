@@ -1,22 +1,24 @@
-from django.shortcuts import render
-from django.http import HttpResponse, Http404
-from django.template import loader
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView
 
 from .models import Post
 
 # Create your views here.
 
-def index(request):
-  latest_post_list = Post.objects.order_by('-publish_date')[:5]
-  template = loader.get_template('posts/index.html')
-  context = {
-    'latest_post_list': latest_post_list,
-  }
-  return HttpResponse(template.render(context, request))
+class IndexView(TemplateView):
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['latest_posts_list'] = Post.objects.order_by('-publish_date')[:5]
+    return context
 
-def detail(request, post_slug_title):
-  try:
-    post = Post.objects.get(slug_title=post_slug_title)
-  except:
-    raise Http404('Post does not exist.')
-  return render(request, 'posts/detail.html', {'post': post})
+  template_name = 'posts/index.html'
+
+class DetailView(TemplateView):
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    self.post = get_object_or_404(Post,
+        slug_title=self.kwargs['post_slug_title'])
+    context['post'] = self.post
+    return context
+
+  template_name = 'posts/detail.html'

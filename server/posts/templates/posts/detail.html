@@ -1,5 +1,11 @@
 <h1>{{ post.display_title }}</h1>
 
 <div>
+  <a href="{% url 'posts:index' %}">
+    Back to posts
+  </a>
+</div>
+
+<div>
   {{ post.content |safe }}
 </div>

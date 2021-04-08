@@ -1,6 +1,8 @@
-{% if latest_post_list %}
+<pre style="display: none;"> {% filter force_escape %} {% debug %} {% endfilter %} </pre>
+
+{% if latest_posts_list %}
   <ul>
-    {% for post in latest_post_list %}
+    {% for post in latest_posts_list %}
       <li>
         <a href="{% url 'posts:detail' post.slug_title %}">
           {{ post.display_title }}
