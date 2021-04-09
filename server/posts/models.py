@@ -1,5 +1,6 @@
 import os
 from django.conf import settings
+from decouple import config
 from django.db import models
 
 # Create your models here.
@@ -46,35 +47,35 @@ class Post(models.Model):
     publish_date = models.DateField(blank=True)
     last_edit_date = models.DateField(blank=True, null=True)
     thumbnail_small = models.FilePathField(
-        path=settings.STATIC_URL,
+        path=settings.UPLOAD_FILES_URL,
         match=__image_matcher,
         recursive=True,
         blank=False,
         null=False
     )
     thumbnail_medium = models.FilePathField(
-        path=settings.STATIC_URL,
+        path=settings.UPLOAD_FILES_URL,
         match=__image_matcher,
         recursive=True,
         blank=False,
         null=False
     )
     thumbnail_large = models.FilePathField(
-        path=settings.STATIC_URL,
+        path=settings.UPLOAD_FILES_URL,
         match=__image_matcher,
         recursive=True,
         blank=False,
         null=False
     )
     javascript_url = models.FilePathField(
-        path=settings.STATIC_URL,
+        path=settings.UPLOAD_FILES_URL,
         match='/*\.js$',
         recursive=True,
         blank=True,
         null=True
     )
     stylesheet_url = models.FilePathField(
-        path=settings.STATIC_URL,
+        path=settings.UPLOAD_FILES_URL,
         match='/*\.css$',
         recursive=True,
         blank=True,

@@ -1,4 +1,10 @@
-<pre style="display: none;"> {% filter force_escape %} {% debug %} {% endfilter %} </pre>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'posts/styles.css' %}">
+<script type="text/javascript" src="{% static 'posts/script.js' %}"></script>
+
+<pre style="display: none;">
+  {% filter force_escape %} {% debug %} {% endfilter %}
+</pre>
 
 {% if latest_posts_list %}
   <ul>

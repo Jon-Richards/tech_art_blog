@@ -120,3 +120,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = config('STATIC_FILES_URL')
+
+
+# Custom Settings
+
+UPLOAD_FILES_URL = config('UPLOAD_FILES_URL')
