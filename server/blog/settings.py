@@ -32,7 +32,7 @@ ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 # Application definition
 
 INSTALLED_APPS = [
-    'posts.apps.PostsConfig',
+    'articles.apps.ArticlesConfig',
     'pages.apps.PagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',

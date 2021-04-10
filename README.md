@@ -16,7 +16,7 @@ things relating to technical art.
   - [Apps](#apps)
     - [Blog](#blog)
     - [Pages](#pages)
-    - [Posts](#posts)
+    - [Articles](#articles)
   - [Additional Notes](#additional-notes)
 
 <a name="prerequisites"></a>
@@ -131,9 +131,9 @@ The core app for this project.  Handles overall project configuration.
   models from other apps for the purpose of building out HTML templates via its
   own views.
 
-### Posts
-- Concerns all things related to blog posts.
-- Implements a JSON API for retrieving post information.
+### Articles
+- Concerns all things related to blog articles.
+- Implements a JSON API for retrieving article information.
 
 
 <a name="additional_notes"></a>

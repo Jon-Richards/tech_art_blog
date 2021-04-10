@@ -11,7 +11,7 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
-class Post(models.Model):
+class Article(models.Model):
     __image_matcher = '/*\.(jpg|jpeg|png|gif)$'
 
     content = models.TextField(
