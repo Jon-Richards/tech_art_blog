@@ -23,11 +23,11 @@
 - [x] Logging - Django has predefined logging, start there.
 - [x] Testing - Uses Python's standard testing library.
 - [x] Migrations
-- [ ] Echo and link to posts on home page.
+- [x] Echo and link to posts on home page.
 - [ ] Set up home page.
   - [ ] About, navigation, copyright into etc.
 - [ ] Define how front-end app will work with back end.
-  - [ ] build process ect.
+  - [ ] build process etc.
 
 
 ## Scribbles
@@ -36,3 +36,4 @@
 - Client (all things client side)
 - Server
   - Blog (core app)
+  - Posts (posts, tags, etc.)

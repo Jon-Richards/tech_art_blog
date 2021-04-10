@@ -13,6 +13,10 @@ things relating to technical art.
   - [Setup](#setup)
   - [Running The Project](#running-the-project)
   - [Using the VM](#using-the-vm)
+  - [Apps](#apps)
+    - [Blog](#blog)
+    - [Pages](#pages)
+    - [Posts](#posts)
   - [Additional Notes](#additional-notes)
 
 <a name="prerequisites"></a>
@@ -104,6 +108,32 @@ $ vagrant ssh
 
 The project directory is shared with the VM at `/vagrant`.  Any changes there
 will be reflected on the host machine.
+
+
+<a name="app_overview"></a>
+## Apps
+
+Django's concept of an "app" is fairly open to interpretation.  In the case of
+this project, an "app" represents a "concern".  As a convention, apps do not
+mix concerns and contain **no** foreign keys to other apps.
+
+There are some apps however, e.g. Pages (which contains no models) that are
+allowed to reference models in other apps for the purpose of building out a
+human readable page.  This is an exception, not the norm.
+
+The project is divided into the following apps:
+
+### Blog
+The core app for this project.  Handles overall project configuration.
+
+### Pages
+- Generates the web UI.  **Pages contains no models of its own**, but calls
+  models from other apps for the purpose of building out HTML templates via its
+  own views.
+
+### Posts
+- Concerns all things related to blog posts.
+- Implements a JSON API for retrieving post information.
 
 
 <a name="additional_notes"></a>
