@@ -1,11 +1,19 @@
-<h1>{{ article.display_title }}</h1>
+{% extends 'pages/layouts/default.html' %}
 
-<div>
-  <a href="{% url 'pages:articles' %}">
-    Back to articles
-  </a>
-</div>
+{% block page_title %}
+  {{article.display_title}}
+{% endblock %}
 
-<div>
-  {{ article.content |safe }}
-</div>
+{% block content %}
+  <h1>{{ article.display_title }}</h1>
+
+  <div>
+    <a href="{% url 'pages:articles' %}">
+      Back to articles
+    </a>
+  </div>
+
+  <div>
+    {{ article.content |safe }}
+  </div>
+{% endblock %}

@@ -18,3 +18,11 @@ body {
   background-color: var(--color-graphite);
   color: var(--color-chalk);
 }
+
+a:link, a:visited {
+  color: #aaf;
+}
+
+a:hover {
+  color: #ffa;
+}

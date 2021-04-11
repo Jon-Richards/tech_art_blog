@@ -122,6 +122,9 @@ USE_TZ = True
 
 STATIC_URL = config('STATIC_FILES_URL')
 
+STATIC_FILES_DIRS = [
+    ('client', '/app/client/dist/')
+]
 
 # Custom Settings
 

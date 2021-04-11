@@ -24,10 +24,12 @@
 - [x] Testing - Uses Python's standard testing library.
 - [x] Migrations
 - [x] Echo and link to posts on home page.
+- [ ] Define how front-end app will work with back end.
+  - [ ] Static assets
+  - [ ] Front-end build process.
+  - [ ] Default skin for articles.
 - [ ] Set up home page.
   - [ ] About, navigation, copyright into etc.
-- [ ] Define how front-end app will work with back end.
-  - [ ] build process etc.
 
 
 ## Scribbles

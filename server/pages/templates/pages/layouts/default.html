@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      {% block page_title %}
+      {% endblock %}
+    </title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'pages/styles.css' %}"
+    >
+  </head>
+  <body>
+    <header>
+      I am the header.
+    </header>
+    <main>
+      {% include 'pages/layouts/partials/_noscript_disclaimer.html' %}
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      I am the footer.
+    </footer>
+    <script
+      type="text/javascript"
+      src="{% static 'pages/script.js' %}"
+    ></script>
+  </body>
+</html>
