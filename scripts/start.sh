@@ -1,5 +1,5 @@
 #!/bin/bash
 
-# Starts the dev server via docker compose
+# Starts a docker service and follows its logs
 
-docker-compose up
+docker-compose start "$@" && docker-compose logs --follow "$@"

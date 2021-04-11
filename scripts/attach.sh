@@ -1,11 +1,6 @@
 #!/bin/bash
 
-# Starts an interactive shell in a running docker container. (Specified by the
-# -c flag.)
+# Starts an interactive shell within the specified container.  (Assumes the
+# container supports Bash.)
 
-while getopts c: flag
-do
-  case "${flag}" in
-    c) docker exec -it ${OPTARG} /bin/bash;;
-  esac
-done
+docker exec -it ${OPTARG} /bin/bash
