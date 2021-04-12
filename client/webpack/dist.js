@@ -4,6 +4,8 @@ const path = require('path');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 /* eslint-disable-next-line */
 const ESLintWebpackPlugin = require('eslint-webpack-plugin');
+/* eslint-disable-next-line */
+const StylelintWebpackPlugin = require('stylelint-webpack-plugin');
 
 const CWD = process.cwd();
 
@@ -59,5 +61,6 @@ module.exports = () => ({
     new ESLintWebpackPlugin({
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
+    new StylelintWebpackPlugin(),
   ],
 });

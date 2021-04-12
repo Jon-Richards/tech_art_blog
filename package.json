@@ -10,7 +10,7 @@
     "build:dist": "webpack --config ./client/webpack/dist.js",
     "typecheck": "tsc --noEmit",
     "tsc": "tsc",
-    "lint": "eslint ./client/** --ext .js,.jsx,.ts,.tsx"
+    "lint": "stylelint **/*.scss && eslint ./client/** --ext .js,.jsx,.ts,.tsx"
   },
   "author": "Jon Richards",
   "license": "UNLICENSED",
@@ -31,6 +31,9 @@
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
     "style-loader": "^2.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-recommended": "^4.0.0",
+    "stylelint-webpack-plugin": "^2.1.1",
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "webpack": "^5.31.2",
