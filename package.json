@@ -3,14 +3,31 @@
   "version": "1.0.0",
   "private": true,
   "description": "A simple blog for documenting my exploration into the world of technical artists.",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "webpack --config ./client/webpack/dev.js",
+    "build:watch": "webpack --config ./client/webpack/dev.js --watch",
+    "build:dist": "webpack --config ./client/webpack/dist.js",
+    "typecheck": "tsc --noEmit",
+    "tsc": "tsc"
   },
   "author": "Jon Richards",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-typescript": "^7.13.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.2.1",
     "lit-element": "^2.4.0",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "mini-css-extract-plugin": "^1.4.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.1.0",
+    "typescript": "^4.2.4",
+    "webpack": "^5.31.2",
+    "webpack-cli": "^4.6.0"
   }
 }

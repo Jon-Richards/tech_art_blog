@@ -8,29 +8,28 @@ things relating to technical art.
 
 - [Tech Art Blog](#tech-art-blog)
   - [Table of Contents](#table-of-contents)
-  - [Prerequisites](#prerequisites)
   - [Project Overview](#project-overview)
+  - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Running The Project](#running-the-project)
   - [Using the VM](#using-the-vm)
-  - [Apps](#apps)
-    - [Blog](#blog)
-    - [Pages](#pages)
-    - [Articles](#articles)
+    - [Setting Up The VM](#setting-up-the-vm)
+    - [Starting The VM](#starting-the-vm)
+  - [Application Structure](#application-structure)
+    - [Back-end](#back-end)
+      - [Blog](#blog)
+      - [Pages](#pages)
+      - [Articles](#articles)
+    - [Front-end](#front-end)
+      - [HTML](#html)
+      - [JavaScript](#javascript)
+      - [CSS](#css)
   - [Scripts](#scripts)
     - [`start.sh`](#startsh)
     - [`attach.sh`](#attachsh)
   - [Additional Notes](#additional-notes)
 
-<a name="prerequisites"></a>
-## Prerequisites
-
-- Docker
-- Vagrant (optional)
-- VirtualBox (optional) 
-- Python 3.9.1>=,<4.0 (optional, installed by Docker)
-- Node.js 14+ (optional, installed by Docker)
-
+---
 
 <a name="project_overview"></a>
 ## Project Overview
@@ -51,6 +50,16 @@ a glue layer between applications.
 > For a primer on getting started with Django, see Django's official on
 > [creating a demo application](https://docs.djangoproject.com/en/3.2/).
 
+---
+
+<a name="prerequisites"></a>
+## Prerequisites
+
+- Docker
+- Vagrant (optional)
+- VirtualBox (optional) 
+- Python 3.9.1>=,<4.0 (optional, installed by Docker)
+- Node.js 14+ (optional, installed by Docker)
 
 <a name="setup"></a>
 ## Setup
@@ -61,21 +70,31 @@ a glue layer between applications.
    > visibility on anything above that directory unless explicitly specified
    > by Python.
 
-<a name="running_the_project"></a>
-## Running The Project
-
 The project uses Docker to manage its core dependencies, with
-`docker-compose.yml` managing each service.  IF you system doesn't support
+`docker-compose.yml` managing each service.  IF your system doesn't support
 docker, the project also includes a Vagrant VM that installs Ubuntu and Docker
 during provisioning.
 
-> The [Scripts section](#scripts) of this README provides quality of life
-> improvements to some of these commands.
+> VirtualBox has known issues with symbolic links on Windows.  While this
+> shouldn't prevent you from running the project, it's less error prone to run
+> the `npm install` step on the host machine.
 
-**Building an image.**
+**Building the application for the first time.**
 ```
 $ docker-compose build
+
+// If running on the VM returns an error, try running from the host machine.
+$ npm install
+$ npm run build:dev
 ```
+
+---
+
+<a name="running_the_project"></a>
+## Running The Project
+
+> The [Scripts section](#scripts) of this README provides quality of life
+> improvements to some of these commands.
 
 **Running the server**
 ```
@@ -95,8 +114,53 @@ $ docker-compose run node npm install --save-dev lodash
 $ docker exec -it <container name> /bin/bash
 ```
 
+**Running a front-end build**
+```
+$ docker-compose run npm run build:dev
+```
+
+**Watching front-end code for changes**
+```
+$ docker-compose run npm run build:watch
+```
+
+**Running a front-end build for production**
+```
+$ docker-compose run npm run build:dist
+```
+
+**Running the TypeScript compiler in the background**\
+(This is purely for feedback within an IDE and will not output any files.)
+```
+$ docker-compose run npm run typecheck -- --watch
+```
+
 <a name="using_the_vm"></a>
 ## Using the VM
+
+### Setting Up The VM
+
+On Windows hosts, VirtualBox disables symlinking by default, which creates
+problems when installing NPM packages.  If you're not on Windows, skip to
+[Starting The VM](#starting-the-vm)
+
+> Copied from [https://github.com/npm/npm/issues/992#issuecomment-289935776](https://github.com/npm/npm/issues/992#issuecomment-289935776).
+
+1) Navigate to VirtualBox's installation folder.  Typically, this is
+   `cd C:\Program Files\Oracle\VirtualBox`.
+2) Right click VirtualBox > Properties > Compatibility and check "Run as
+   administrator".
+3) `cd "/Program Files/Oracle/VirtualBox"` (use quotes in the path) and run the
+   command:
+   ```
+   .\VBoxManage setextradata VM_NAME VBoxInternal2/SharedFoldersEnableSymlinksCreate/vagrant 1
+   ```
+   replacing VM_NAME with your Virtual Machine's name (if you don't know this, in VBox go to Machine > Settings > General > Basic > Name --- also replace SHARE_NAME with the name of your shared folder, if you don't remember this, go to Machine > Settings > Shared Folders.
+4) Restart VirtualBox and the VM.  Ensure VirtualBox runs as administrator.
+
+If the above solution doesn't work, consider running npm from the host machine.
+
+### Starting The VM
 
 The repo comes with a Vagrant VM configured to run Ubuntu 18.04 and install
 Docker during provisioning.  If your system doesn't support Docker, but can run
@@ -115,9 +179,23 @@ $ vagrant ssh
 The project directory is shared with the VM at `/vagrant` directory.  Any
 changes there are reflected on the host machine.
 
+**Navigating to the correct user/directory on the VM.**
+```
+sudo su
+cd /vagrant
+```
 
-<a name="app_overview"></a>
-## Apps
+---
+
+<a name="application-structure"></a>
+## Application Structure
+
+<a name="back-end"></a>
+### Back-end
+
+The back-end is a Django project.  For more information on Django as a
+framework, see
+[Django's official documentation](https://docs.djangoproject.com/en/3.2/).
 
 Django's concept of an "app" is fairly open to interpretation.  In the case of
 this project, an "app" represents a "concern".  As a convention, apps do not
@@ -129,18 +207,40 @@ human readable page.  This is an exception, not the norm.
 
 The project is divided into the following apps:
 
-### Blog
+#### Blog
 The core app for this project.  Handles overall project configuration.
 
-### Pages
+#### Pages
 - Generates the web UI.  **Pages contains no models of its own**, but calls
   models from other apps for the purpose of building out HTML templates via its
   own views.
 
-### Articles
+#### Articles
 - Concerns all things related to blog articles.
 - Implements a JSON API for retrieving article information.
 
+
+<a name="font-end"></a>
+### Front-end
+
+The front-end is a combination of HTML (rendered by Django), TypeScript, and
+Sass.
+
+#### HTML
+
+Server-side HTML is rendered by by Django, specifically in the `Pages`
+application.  No other application should render HTML.
+
+#### JavaScript
+
+JavaScript is compiled from TypeScript (via webpack) from the `./client/src`
+directory.  It also serves as the entry point for Sass.
+
+#### CSS
+
+CSS is written in the form of Sass.
+
+---
 
 <a name="scripts"></a>
 ## Scripts
