@@ -272,3 +272,14 @@ $ ./scripts/attach.sh vagrant_web_1
 
 - Consider aliasing the `docker-compose` command with something shorter, e.g.
   `dc`.
+
+- VSCode
+  - ESlint: You may need to add the following ESLint options in the ESLint
+    extension's settings for the IDE to lint TypeScript:
+    ```
+    "eslint.validate": [
+      "javascript",
+      "typescript",
+      "typescriptreact"
+    ]
+    ``` 

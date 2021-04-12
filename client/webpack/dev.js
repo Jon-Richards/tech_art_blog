@@ -1,19 +1,23 @@
+/* eslint-disable-next-line */
 const path = require('path');
+/* eslint-disable-next-line */
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
+/* eslint-disable-next-line */
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
 const CWD = process.cwd();
 
 module.exports = () => ({
   mode: 'development',
   entry: {
-    'pages.bundle' : path.join(CWD, 'client', 'src', 'pages', 'pages.ts')
+    'pages.bundle': path.join(CWD, 'client', 'src', 'pages', 'pages.ts'),
   },
   output: {
     path: path.join(CWD, 'server', 'pages', 'static', 'pages'),
     filename: '[name].js',
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".scss"]
+    extensions: ['.ts', '.tsx', '.scss'],
   },
   module: {
     rules: [
@@ -25,15 +29,15 @@ module.exports = () => ({
             options: {
               presets: [
                 ['@babel/preset-env'],
-                ['@babel/preset-typescript']
-              ]
-            }
+                ['@babel/preset-typescript'],
+              ],
+            },
           },
           {
             loader: 'ts-loader',
-            options: {}
-          }
-        ]
+            options: {},
+          },
+        ],
       },
       {
         test: /\.scss?$/,
@@ -43,8 +47,8 @@ module.exports = () => ({
           // compile CSS into CommonJS
           'css-loader',
           // compile Sass to CSS
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
     ],
   },
@@ -54,6 +58,9 @@ module.exports = () => ({
   },
   target: 'web',
   plugins: [
-    new MiniCSSExtractPlugin()
-  ]
+    new MiniCSSExtractPlugin(),
+    new ESLintWebpackPlugin({
+      extensions: ['js', 'jsx', 'ts', 'tsx'],
+    }),
+  ],
 });
