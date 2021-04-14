@@ -1,5 +1,5 @@
-@import './partials/reset';
-@import './partials/colors';
+@import './utils/reset';
+@import './utils/colors';
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -32,6 +32,6 @@ body {
 @import './themes/dark';
 @import './themes/light';
 
-@import './header/header';
-@import './content/content';
-@import './footer/footer';
+@import './partials/header';
+@import './partials/content';
+@import './partials/footer';
