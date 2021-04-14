@@ -1,0 +1,15 @@
+body.theme--light {
+  --header__background-color: var(--color-grey-90);
+  --header__color: var(--color-grey-20);
+  --header__border-bottom-color: var(--color-grey-80);
+  --header__logo-color: var(--color-red-50);
+  --header__nav-link-font-weight: bold;
+  --header__nav-link-color: var(--color-red-60);
+  --header__nav-link-hover-color: var(--color-red-70);
+
+  --content__background-color: var(--color-grey-90);
+  --content__color: var(--color-grey-20);
+  
+  --footer__background-color: var(--color-grey-90);
+  --footer__color: var(--color-grey-20);
+}

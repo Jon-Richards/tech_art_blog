@@ -1,0 +1,8 @@
+body.theme {
+  $color-fade-time: 0.3s;
+
+  transition:
+    color $color-fade-time,
+    background-color $color-fade-time,
+    border-color $color-fade-time;
+}

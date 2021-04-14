@@ -1,0 +1,15 @@
+body.theme--dark {
+  --header__background-color: var(--color-grey-10);
+  --header__color: var(--color-grey-90);
+  --header__border-bottom-color: var(--color-grey-20);
+  --header__logo-color: var(--color-yellow-70);
+  --header__nav-link-font-weight: lighter;
+  --header__nav-link-color: var(--color-yellow-70);
+  --header__nav-link-hover-color: var(--color-yellow-80);
+
+  --content__background-color: var(--color-grey-20);
+  --content__color: var(--color-grey-90);
+
+  --footer__background-color: var(--color-grey-20);
+  --footer__color: var(--color-grey-90);
+}

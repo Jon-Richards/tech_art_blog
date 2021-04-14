@@ -1,0 +1,41 @@
+@mixin breakpoint-375 {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-480 {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-640 {
+  @media (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-768 {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-900 {
+  @media (min-width: 900) {
+    @content;
+  }
+}
+
+@mixin breakpoint-1024 {
+  @media (min-width: 1024) {
+    @content;   
+  }
+}
+
+@mixin breakpoint-1280 {
+  @media (min-width: 1280) {
+    @content;    
+  }
+}

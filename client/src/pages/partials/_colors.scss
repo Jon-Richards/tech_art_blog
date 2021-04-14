@@ -1,0 +1,79 @@
+/**
+ * Generates a lightness scale of a given color.
+ * @param $name {string} - The name of the color.
+ * @param $color - The base value of the color.
+ * @return A lightness scale of the given color from 10 - 90.
+ */
+@mixin generate-swatch($name, $color) {
+  @for $i from 1 through 9 {
+    $iteration: $i * 10;
+    $clamp-value: 50;
+    @if $i < 5 {
+      --color-#{$name}-#{$iteration}:
+          #{darken($color, $clamp-value - $iteration)};
+    }
+    @if $i == 5 {
+      --color-#{$name}-#{$iteration}: #{$color};
+    }
+    @if $i > 5 {
+      --color-#{$name}-#{$iteration}:
+          #{lighten($color, $iteration - $clamp-value)};
+    }
+  }
+}
+
+:root {
+  @include generate-swatch('grey', rgb(127, 127, 127));
+  @include generate-swatch('yellow', rgb(136, 111, 0));
+  @include generate-swatch('red', rgb(127, 0, 0));
+}
+
+body.color-scheme {
+  $color-fade-time: 0.3s;
+
+  transition:
+    color $color-fade-time,
+    background-color $color-fade-time,
+    border-color $color-fade-time;
+
+  --header__background-color: var(--color-grey-90);
+  --header__color: var(--color-grey-20);
+
+  --content__background-color: var(--color-grey-90);
+  --content__color: var(--color-grey-20);
+
+  --footer__background-color: var(--color-grey-90);
+  --footer__color: var(--color-grey-20);
+}
+
+body.color-scheme--dark {
+  --header__background-color: var(--color-grey-10);
+  --header__color: var(--color-grey-90);
+  --header__border-bottom-color: var(--color-grey-20);
+  --header__logo-color: var(--color-yellow-70);
+  --header__nav-link-font-weight: lighter;
+  --header__nav-link-color: var(--color-yellow-70);
+  --header__nav-link-hover-color: var(--color-yellow-80);
+
+  --content__background-color: var(--color-grey-20);
+  --content__color: var(--color-grey-90);
+
+  --footer__background-color: var(--color-grey-20);
+  --footer__color: var(--color-grey-90);
+}
+
+body.color-scheme--light {
+  --header__background-color: var(--color-grey-90);
+  --header__color: var(--color-grey-20);
+  --header__border-bottom-color: var(--color-grey-80);
+  --header__logo-color: var(--color-red-50);
+  --header__nav-link-font-weight: bold;
+  --header__nav-link-color: var(--color-red-60);
+  --header__nav-link-hover-color: var(--color-red-70);
+
+  --content__background-color: var(--color-grey-90);
+  --content__color: var(--color-grey-20);
+  
+  --footer__background-color: var(--color-grey-90);
+  --footer__color: var(--color-grey-20);
+}

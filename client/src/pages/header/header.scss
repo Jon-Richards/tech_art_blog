@@ -1,0 +1,69 @@
+@import '../partials/breakpoints';
+
+.header {
+  display: grid;
+  grid-template-areas: 'logo' 'nav';
+  border-bottom: thin solid var(--header__border-bottom-color, black);
+  background-color: var(--header__background-color, white);
+  color: var(--header__color, black);
+
+  @include breakpoint-640 {
+    padding: 2rem;
+    grid-template-areas: 'logo nav';
+  }
+
+  &__logo {
+    padding: 1.5rem 1rem;
+    font-size: 1.5rem;
+    color: var(--header__logo-color, black);
+
+    @include breakpoint-640 {
+      padding: 0;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    height: 100%;
+
+    @include breakpoint-640 {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__nav-list-item {
+    display: block;
+    padding: 1rem;
+    border-top: thin solid var(--color-grey-80, black);
+    border-bottom: thin solid var(--color-grey-80, black);
+
+    @include breakpoint-640 {
+      display: inline-block;
+      padding: 0;
+      border: none;
+      margin-right: 1rem;
+    }
+  }
+  &__nav-list-item:last-of-type {
+    margin-right: 0rem;
+    border: none;
+  }
+
+  &__nav-link,
+  &__nav-link:visited {
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: var(--header__nav-link-font-weight, regular);
+    text-decoration: none;
+    color: var(--header__nav-link-color, blue);
+  }
+  &__nav-link:hover,
+  &__nav-link:focus {
+    text-decoration: underline;
+    color: var(--header__nav-link-hover-color, blue);
+  }
+}

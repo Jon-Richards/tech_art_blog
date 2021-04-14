@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       {% block page_title %}
       {% endblock %}
@@ -13,17 +14,19 @@
       href="{% static 'pages/pages.bundle.css' %}"
     >
   </head>
-  <body>
-    <header>
-      I am the header.
-    </header>
-    <main>
-      {% include 'pages/layouts/partials/_noscript_disclaimer.html' %}
-      {% block content %}{% endblock %}
-    </main>
-    <footer>
-      I am the footer.
-    </footer>
+  <body class="theme theme--light">
+    <div class="page">
+      {% include 'pages/layouts/partials/_header.html' %}
+      <main class="content">
+        <my-element></my-element>
+        {% include 'pages/layouts/partials/_noscript_disclaimer.html' %}
+        {% block content %}{% endblock %}
+        {% lorem 2 %}
+      </main>
+      <footer class="footer">
+        I am the footer.
+      </footer>
+    </div>
     <script
       type="text/javascript"
       src="{% static 'pages/pages.bundle.js' %}"
