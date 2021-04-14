@@ -1,4 +1,8 @@
 .content {
   background-color: var(--content__background-color, white);
   color: var(--content__color, black);
+
+  &__padder {
+    padding: 3rem;
+  }
 }

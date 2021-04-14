@@ -1,8 +1,8 @@
-{% extends 'pages/layouts/default.html' %}
+{% extends 'pages/layouts/page.html' %}
 
 {% block page_title %}Hello World!{% endblock %}
 
-{% block content %}
+{% block page_content %}
   <div>This is the index page.</div>
   <a href="{% url 'pages:articles' %}">Articles</a>
 {% endblock %}

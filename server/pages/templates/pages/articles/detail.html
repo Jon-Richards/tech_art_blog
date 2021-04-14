@@ -1,10 +1,10 @@
-{% extends 'pages/layouts/default.html' %}
+{% extends 'pages/layouts/article.html' %}
 
-{% block page_title %}
+{% block article_title %}
   {{article.display_title}}
 {% endblock %}
 
-{% block content %}
+{% block article_content %}
   <h1>{{ article.display_title }}</h1>
 
   <div>

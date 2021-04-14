@@ -1,0 +1,12 @@
+{% extends 'pages/layouts/base.html' %}
+
+{% block base_page_title %}
+  {% block page_title %}
+  {% endblock %}
+{% endblock %}
+
+{% block base_content %}
+  <div class="content__padder">
+    {% block page_content %}{% endblock %}
+  </div>
+{% endblock %}
