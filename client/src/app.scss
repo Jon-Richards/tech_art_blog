@@ -32,11 +32,12 @@ body {
 @import './themes/dark';
 @import './themes/light';
 
-@import './pages/partials/header';
-@import './pages/partials/content';
-@import './pages/partials/footer';
+@import './partials/header';
+@import './partials/content';
+@import './partials/footer';
 
 @import './pages/index/index';
 @import './pages/articles/index';
 @import './pages/articles/article';
 @import './pages/settings/index';
+@import './pages/style_guide/index';
