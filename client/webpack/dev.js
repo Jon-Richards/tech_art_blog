@@ -12,7 +12,7 @@ const CWD = process.cwd();
 module.exports = () => ({
   mode: 'development',
   entry: {
-    'pages.bundle': path.join(CWD, 'client', 'src', 'pages', 'pages.ts'),
+    'pages.bundle': path.join(CWD, 'client', 'src', 'app.ts'),
   },
   output: {
     path: path.join(CWD, 'server', 'pages', 'static', 'pages'),

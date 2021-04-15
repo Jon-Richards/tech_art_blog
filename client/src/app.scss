@@ -32,8 +32,8 @@ body {
 @import './themes/dark';
 @import './themes/light';
 
-@import './partials/header';
-@import './partials/content';
-@import './partials/footer';
+@import './pages/partials/header';
+@import './pages/partials/content';
+@import './pages/partials/footer';
 
-@import './settings/index.scss';
+@import './pages/settings/index.scss';

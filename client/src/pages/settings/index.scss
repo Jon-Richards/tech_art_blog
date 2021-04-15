@@ -1,5 +1,12 @@
-.page-settings-index {
-  &__panel {
+#pages-settings-index {
+  $namespace: 'pages-settings-index';
+  
+  .#{$namespace}__section {
+    display: block;
+    padding-bottom: 2rem;
+  }
+
+  .#{$namespace}__panel {
     display: block;
     --panel__display: block;
   }

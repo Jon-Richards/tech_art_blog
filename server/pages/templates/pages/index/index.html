@@ -3,6 +3,8 @@
 {% block page_title %}Hello World!{% endblock %}
 
 {% block page_content %}
-  <div>This is the index page.</div>
-  <a href="{% url 'pages:articles' %}">Articles</a>
+  <div id="pages-index">
+    <div>This is the index page.</div>
+    <a href="{% url 'pages:articles' %}">Articles</a>
+  </div>
 {% endblock %}

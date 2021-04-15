@@ -3,9 +3,23 @@
 {% block page_title %}Settings{% endblock %}
 
 {% block page_content %}
-  <div class="page-settings-index">
-    <jr-panel class="page-settings-index__panel">
-      I am a panel!
-    </jr-panel>
+  <div id="pages-settings-index">
+    <section id="theme" class="pages-settings-index__section">
+      <jr-panel class="pages-settings-index__panel">
+        Theme
+      </jr-panel>
+    </section>
+
+    <section id="cookies" class="pages-settings-index__section">
+      <jr-panel class="pages-settings-index__panel">
+        Cookies
+      </jr-panel>
+    </section>
+
+    <section id="motion" class="pages-settings-index__section">
+      <jr-panel class="pages-settings-index__panel">
+        Motion
+      </jr-panel>
+    </section>
   </div>
 {% endblock %}

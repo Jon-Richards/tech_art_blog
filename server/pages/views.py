@@ -6,7 +6,7 @@ from articles.models import Article
 # Create your views here.
 
 class IndexView(TemplateView):
-  template_name = 'pages/index.html'
+  template_name = 'pages/index/index.html'
 
 
 class ArticlesIndexView(TemplateView):
