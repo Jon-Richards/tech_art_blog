@@ -6,10 +6,19 @@ body.theme--dark {
   --header__nav-link-font-weight: lighter;
   --header__nav-link-color: var(--color-yellow-70);
   --header__nav-link-hover-color: var(--color-yellow-80);
+  --header__box-shadow-color: black;
 
   --content__background-color: var(--color-grey-20);
   --content__color: var(--color-grey-90);
 
   --footer__background-color: var(--color-grey-20);
   --footer__color: var(--color-grey-90);
+
+  jr-panel {
+    --panel-padding: 1rem;
+    --panel-background-color: var(--grey-90);
+    --panel-border: thin solid var(--grey-50);
+    --panel-box-shadow: 0 0 0.5rem var(--grey-70--alpha-25);
+  
+  }
 }

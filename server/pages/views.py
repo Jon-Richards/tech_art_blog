@@ -8,6 +8,7 @@ from articles.models import Article
 class IndexView(TemplateView):
   template_name = 'pages/index.html'
 
+
 class ArticlesIndexView(TemplateView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
@@ -26,6 +27,7 @@ class ArticleDetailView(TemplateView):
     return context
 
   template_name = 'pages/articles/detail.html'
+
 
 class SettingsIndexView(TemplateView):
   def get_context_data(self, **kwargs):

@@ -6,7 +6,9 @@
   border-bottom: thin solid var(--header__border-bottom-color, black);
   background-color: var(--header__background-color, white);
   color: var(--header__color, black);
-
+  box-shadow: 0 0 0.5rem var(--header__box-shadow-color);
+  z-index: 99;
+  
   @include breakpoint-640 {
     padding: 2rem;
     grid-template-areas: 'logo nav';
