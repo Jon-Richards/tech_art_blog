@@ -1,5 +1,5 @@
 body.theme--light {
-  --header__background-color: var(--color-grey-90);
+  --header__background-color: white;
   --header__color: var(--color-grey-20);
   --header__border-bottom-color: none;
   --header__logo-color: var(--color-red-50);
@@ -15,8 +15,6 @@ body.theme--light {
   --footer__color: var(--color-grey-20);
 
   jr-panel {
-    --panel__padding: 1rem;
-    --panel__background-color: var(white);
     --panel__border: thin solid var(--color-grey-90);
     --panel__box-shadow: 0 0.1rem 0.25rem var(--color-grey-10--alpha-25);
   }

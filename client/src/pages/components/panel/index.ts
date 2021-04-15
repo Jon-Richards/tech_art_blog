@@ -4,7 +4,7 @@ import {LitElement, html, TemplateResult, css, CSSResult} from 'lit-element';
  * Renders a simple panel.
  *
  * CSS custom properties:\
- * `--panel__background-color`: The panel's background color.\
+ * `--panel__background`: The panel's shorthand background property.\
  * `--panel__border`: The panel's shorthand css border css property.\
  * `--panel__border-radius`: The panel's shorthand border radius property.\
  * `--panel__box-shadow`: The panel's shorthand box shadow property.\
@@ -28,7 +28,7 @@ export class Panel extends LitElement {
       }
 
       .panel {
-        background-color: var(--panel__background-color, white);
+        background: var(--panel__background, white);
         border: var(--panel__border, thin solid black);
         border-radius: var(--panel__border-radius, 0);
         box-shadow: var(--panel__box-shadow, none);
@@ -36,7 +36,7 @@ export class Panel extends LitElement {
         height: var(--panel__height, initial);
         max-height: var(--panel__max-height, initial);
         max-width: var(--panel__max-width, initial);
-        padding: var(--panel__padding, none);
+        padding: var(--panel__padding, 1rem);
         width: var(--panel__width, initial);
       }
     `;
