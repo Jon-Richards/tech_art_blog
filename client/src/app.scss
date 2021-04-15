@@ -36,4 +36,7 @@ body {
 @import './pages/partials/content';
 @import './pages/partials/footer';
 
-@import './pages/settings/index.scss';
+@import './pages/index/index';
+@import './pages/articles/index';
+@import './pages/articles/article';
+@import './pages/settings/index';
