@@ -1,5 +1,13 @@
-@import './utils/reset';
-@import './utils/colors';
+@use './utils/reset';
+@use './utils/colors';
+
+:root {
+  @include colors.generate-swatch('grey', rgb(141, 141, 141));
+  @include colors.generate-swatch('yellow', rgba(136, 111, 0, 1));
+  @include colors.generate-swatch('red', rgba(127, 0, 0, 1));
+}
+
+@include reset.reset();
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -33,7 +41,8 @@ body {
 @import './themes/light.scss';
 
 @import './layouts/base.scss';
-@import './layouts/page.scss';
+@import './layouts/single-column.scss';
+@import './layouts/two_by_one.scss';
 @import './layouts/partials/header.scss';
 @import './layouts/partials/content.scss';
 @import './layouts/partials/footer.scss';

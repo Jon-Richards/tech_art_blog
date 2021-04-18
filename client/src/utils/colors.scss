@@ -11,7 +11,7 @@
     @if $i < 5 {
       $result: darken($color, $clamp-value - $iteration);
       --color-#{$name}-#{$iteration}: #{$result};
-      @include generate-swatch-alphas($name, $iteration, $result);
+      @include _generate-swatch-alphas($name, $iteration, $result);
     }
     @if $i == 5 {
       --color-#{$name}-#{$iteration}: #{$color};
@@ -19,7 +19,7 @@
     @if $i > 5 {
       $result: lighten($color, $iteration - $clamp-value);
       --color-#{$name}-#{$iteration}: #{$result};
-      @include generate-swatch-alphas($name, $iteration, $result);
+      @include _generate-swatch-alphas($name, $iteration, $result);
     }
   }
 }
@@ -27,7 +27,7 @@
 /**
  * Generates a range of alpha values for a given color.
  */
-@mixin generate-swatch-alphas($name, $iteration, $color_value) {
+@mixin _generate-swatch-alphas($name, $iteration, $color_value) {
   $increment: 25; // out of 100
   $max-variants: (100 - $increment) / $increment;
   @for $i from 1 through $max-variants {
@@ -37,10 +37,4 @@
     $result: scale-color($color_value, $alpha: $alpha_as_percent);
     --color-#{$name}-#{$iteration}--alpha-#{$label}: #{$result};
   }
-}
-
-:root {
-  @include generate-swatch('grey', rgb(141, 141, 141));
-  @include generate-swatch('yellow', rgba(136, 111, 0, 1));
-  @include generate-swatch('red', rgba(127, 0, 0, 1));
 }

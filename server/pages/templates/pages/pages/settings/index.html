@@ -1,12 +1,8 @@
-{% extends 'pages/layouts/page.html' %}
+{% extends 'pages/layouts/two_by_one.html' %}
 
 {% block title %}Settings{% endblock %}
 
-{% block before %}
-  Before
-{% endblock %}
-
-{% block page_content %}
+{% block two_content %}
   <div id="pages-settings-index">
     <section id="cookies" class="pages-settings-index__section">
       <jr-panel class="pages-settings-index__panel">
@@ -47,6 +43,6 @@
   </div>
 {% endblock %}
 
-{% block after %}
+{% block one_content %}
   after
 {% endblock %}

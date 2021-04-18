@@ -3,9 +3,7 @@
   
   .#{$namespace}__section {
     display: block;
-    margin: 0 auto 2rem;
-    max-width: 50rem;
-    width: auto;
+    margin: 0 0 2rem 0;
 
     &:last-of-type {
       margin-bottom: 0rem;

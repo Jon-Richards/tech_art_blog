@@ -1,0 +1,5 @@
+@use '../utils/dimensions.scss';
+
+#single-column-layout {
+  @include dimensions.structured_layout;
+}

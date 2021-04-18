@@ -1,4 +1,4 @@
-@import '../../utils/breakpoints';
+@use '../../utils/breakpoints';
 
 #footer {
   border-top: thin solid var(--footer__border-top-color, black);
@@ -13,11 +13,10 @@
     color: var(--footer__color, black);
     padding: 2rem 1rem;
   
-    @include breakpoint-640 {
+    @include breakpoints.breakpoint-640 {
       max-width: 94rem;
       padding: 2rem;
       grid-template-areas: 'logo nav';
     }
   }
-
 }

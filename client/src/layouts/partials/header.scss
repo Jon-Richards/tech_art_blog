@@ -1,4 +1,4 @@
-@import '../../utils/breakpoints';
+@use '../../utils/breakpoints';
 
 #header {
   border-bottom: thin solid var(--header__border-bottom-color, black);
@@ -12,7 +12,7 @@
     margin: 0 auto;
     color: var(--header__color, black);
   
-    @include breakpoint-640 {
+    @include breakpoints.breakpoint-640 {
       max-width: 94rem;
       padding: 2rem;
       grid-template-areas: 'logo nav';
@@ -21,7 +21,7 @@
 
   &__logo {
     padding: 1.5rem 1rem;
-    @include breakpoint-640 {
+    @include breakpoints.breakpoint-640 {
       padding: 0;
     }
   }
@@ -43,7 +43,7 @@
     list-style-type: none;
     height: 100%;
 
-    @include breakpoint-640 {
+    @include breakpoints.breakpoint-640 {
       flex-direction: row;
       justify-content: flex-end;
       align-items: center;
@@ -56,7 +56,7 @@
     border-top: thin solid var(--color-grey-80, black);
     border-bottom: thin solid var(--color-grey-80, black);
 
-    @include breakpoint-640 {
+    @include breakpoints.breakpoint-640 {
       display: inline-block;
       padding: 0;
       border: none;

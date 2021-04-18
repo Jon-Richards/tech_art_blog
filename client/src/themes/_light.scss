@@ -1,3 +1,5 @@
+@use '../utils/dimensions.scss';
+
 body.theme--light {
   #background-area {
     --background-color: var(--color-grey-90);
@@ -20,6 +22,7 @@ body.theme--light {
   --footer__box-shadow-color: var(--color-grey-70);
 
   jr-panel {
+    --panel__padding: #{dimensions.$platform-padding};
     --panel__border: thin solid var(--color-grey-90);
     --panel__box-shadow: 0 0.1rem 0.25rem var(--color-grey-10--alpha-25);
   }

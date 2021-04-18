@@ -1,10 +1,10 @@
-{% extends 'pages/layouts/page.html' %}
+{% extends 'pages/layouts/single_column.html' %}
 
 {% block title %}
   Articles
 {% endblock %}
 
-{% block page_content %}
+{% block single_column_content %}
   <pre style="display: none;">
     {% filter force_escape %} {% debug %} {% endfilter %}
   </pre>
