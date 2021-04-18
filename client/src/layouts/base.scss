@@ -1,0 +1,50 @@
+#root-area {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+}
+
+#background-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: var(--background-color, white);
+}
+
+#flash-area {
+  display: none;
+}
+
+#persistent-area {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#header-area {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#content-area {
+  flex-grow: 1;
+}
+
+#footer-area {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+#toast-area,
+#modal-area,
+#tooltip-area {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}

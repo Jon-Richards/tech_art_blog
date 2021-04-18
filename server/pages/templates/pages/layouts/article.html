@@ -1,11 +1,10 @@
 {% extends 'pages/layouts/base.html' %}
 
-{% block base_page_title %}
-  {% block article_title %}
-  {% endblock %}
-{% endblock %}
-
-{% block base_content %}
-  {% block article_content %}
-  {% endblock %}
+{% block content %}
+  <div id="article-layout">
+    <main id="main-area">
+      {% block article_content %}
+      {% endblock %}
+    </main>
+  </div>
 {% endblock %}

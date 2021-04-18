@@ -1,12 +1,15 @@
 {% extends 'pages/layouts/base.html' %}
 
-{% block base_page_title %}
-  {% block page_title %}
-  {% endblock %}
-{% endblock %}
-
-{% block base_content %}
-  <div class="content__padder">
-    {% block page_content %}{% endblock %}
+{% block content %}
+  <div id="page-layout">
+    <div id="before-area">
+      {% block before %}{% endblock %}
+    </div>
+    <main id="main-area">
+      {% block page_content %}{% endblock %}
+    </main>
+    <div id="after-area">
+      {% block after %}{% endblock %}
+    </div>
   </div>
 {% endblock %}

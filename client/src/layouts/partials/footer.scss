@@ -1,0 +1,23 @@
+@import '../../utils/breakpoints';
+
+#footer {
+  border-top: thin solid var(--footer__border-top-color, black);
+  background-color: var(--footer__background-color, white);
+  box-shadow: 0 0 0.5rem var(--footer__box-shadow-color);
+  
+  &__content {
+    display: grid;
+    grid-template-areas: 'logo' 'nav';
+    width: 100%;
+    margin: 0 auto;
+    color: var(--footer__color, black);
+    padding: 2rem 1rem;
+  
+    @include breakpoint-640 {
+      max-width: 94rem;
+      padding: 2rem;
+      grid-template-areas: 'logo nav';
+    }
+  }
+
+}

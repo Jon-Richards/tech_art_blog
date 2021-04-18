@@ -4,30 +4,42 @@
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block meta %}{% endblock %}
     <title>
-      {% block base_page_title %}
-      {% endblock %}
+      {% block title %}{% endblock %}
     </title>
     <link
       rel="stylesheet"
       type="text/css"
       href="{% static 'pages/pages.bundle.css' %}"
     >
+    {% block styles %}{% endblock %}
   </head>
   <body class="theme theme--light">
-    <div class="page">
-      {% include 'pages/layouts/partials/_header.html' %}
-      <main class="content">
+    <div id="root-area">
+      <div id="background-area"></div>
+      <div id="flash-area">
         {% include 'pages/layouts/partials/_noscript_disclaimer.html' %}
-        {% block base_content %}{% endblock %}
-      </main>
-      <footer class="footer">
-        I am the footer.
-      </footer>
+      </div>
+      <div id="persistent-area">
+        <div id="header-area">
+          {% include 'pages/layouts/partials/_header.html' %}
+        </div>
+        <div id="content-area">
+          {% block content %}{% endblock %}
+        </div>
+        <div id="footer-area">
+          {% include 'pages/layouts/partials/_footer.html' %}
+        </div>
+      </div>
+      <div id="toast-area"></div>
+      <div id="modal-area"></div>
+      <div id="tooltip-area"></div>
     </div>
     <script
       type="text/javascript"
       src="{% static 'pages/pages.bundle.js' %}"
     ></script>
+    {% block scripts %}{% endblock %}
   </body>
 </html>

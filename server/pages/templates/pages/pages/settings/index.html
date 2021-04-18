@@ -1,6 +1,10 @@
 {% extends 'pages/layouts/page.html' %}
 
-{% block page_title %}Settings{% endblock %}
+{% block title %}Settings{% endblock %}
+
+{% block before %}
+  Before
+{% endblock %}
 
 {% block page_content %}
   <div id="pages-settings-index">
@@ -41,4 +45,8 @@
       </jr-panel>
     </section>
   </div>
+{% endblock %}
+
+{% block after %}
+  after
 {% endblock %}

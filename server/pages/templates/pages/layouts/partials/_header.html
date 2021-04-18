@@ -1,29 +1,31 @@
-<header class="header">
-  <div class="header__logo">
-    <a
-      class="header__logo-link"
-      href="{% url 'pages:index' %}"
-    >
-      Jon Richards
-    </a>
+<header id="header">
+  <div id="header__content">
+    <div id="header__logo">
+      <a
+        id="header__logo-link"
+        href="{% url 'pages:index' %}"
+      >
+        Jon Richards
+      </a>
+    </div>
+    <nav id="header__nav">
+      <ul id="header__nav-list">
+        <li class="header__nav-list-item">
+          <a class="header__nav-link" href="{% url 'pages:index' %}">
+            Home
+          </a>
+        </li>
+        <li class="header__nav-list-item">
+          <a class="header__nav-link" href="{% url 'pages:articles' %}">
+            Articles
+          </a>
+        </li>
+        <li class="header__nav-list-item">
+          <a class="header__nav-link" href="{% url 'pages:settings' %}">
+            Settings
+          </a>
+        </li>
+      </ul>
+    </nav>
   </div>
-  <nav class="header__nav">
-    <ul class="header__nav-list">
-      <li class="header__nav-list-item">
-        <a class="header__nav-link" href="{% url 'pages:index' %}">
-          Home
-        </a>
-      </li>
-      <li class="header__nav-list-item">
-        <a class="header__nav-link" href="{% url 'pages:articles' %}">
-          Articles
-        </a>
-      </li>
-      <li class="header__nav-list-item">
-        <a class="header__nav-link" href="{% url 'pages:settings' %}">
-          Settings
-        </a>
-      </li>
-    </ul>
-  </nav>
 </header>

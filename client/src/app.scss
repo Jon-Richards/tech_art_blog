@@ -28,16 +28,18 @@ body {
   min-height: 100vh;
 }
 
-@import './themes/default';
-@import './themes/dark';
-@import './themes/light';
+@import './themes/default.scss';
+@import './themes/dark.scss';
+@import './themes/light.scss';
 
-@import './partials/header';
-@import './partials/content';
-@import './partials/footer';
+@import './layouts/base.scss';
+@import './layouts/page.scss';
+@import './layouts/partials/header.scss';
+@import './layouts/partials/content.scss';
+@import './layouts/partials/footer.scss';
 
-@import './pages/index/index';
-@import './pages/articles/index';
-@import './pages/articles/article';
-@import './pages/settings/index';
-@import './pages/style_guide/index';
+@import './pages/index/index.scss';
+@import './pages/articles/index.scss';
+@import './pages/articles/article.scss';
+@import './pages/settings/index.scss';
+@import './pages/style_guide/index.scss';

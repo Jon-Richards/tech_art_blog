@@ -6,7 +6,7 @@ from articles.models import Article
 # Create your views here.
 
 class IndexView(TemplateView):
-  template_name = 'pages/index/index.html'
+  template_name = 'pages/pages/index/index.html'
 
 
 class ArticlesIndexView(TemplateView):
@@ -15,7 +15,7 @@ class ArticlesIndexView(TemplateView):
     context['latest_articles_list'] = Article.objects.order_by('-publish_date')[:5]
     return context
 
-  template_name = 'pages/articles/index.html'
+  template_name = 'pages/pages/articles/index.html'
 
 
 class ArticleDetailView(TemplateView):
@@ -26,7 +26,7 @@ class ArticleDetailView(TemplateView):
     context['article'] = self.article
     return context
 
-  template_name = 'pages/articles/detail.html'
+  template_name = 'pages/pages/articles/detail.html'
 
 
 class SettingsIndexView(TemplateView):
@@ -34,11 +34,11 @@ class SettingsIndexView(TemplateView):
     context = super().get_context_data(**kwargs)
     return context
 
-  template_name = 'pages/settings/index.html'
+  template_name = 'pages/pages/settings/index.html'
 
 class StyleGuideIndexView(TemplateView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     return context
 
-  template_name = 'pages/style_guide/index.html'
+  template_name = 'pages/pages/style_guide/index.html'

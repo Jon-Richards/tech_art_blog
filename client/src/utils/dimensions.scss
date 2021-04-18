@@ -1,0 +1,21 @@
+/**
+ * Calculates the margin for a block based on a provided multiplier and returns
+ * the resulting value in rems.
+ * @param {number} $multiplier - A number by which to multiply, defaults to 1.
+ * @returns {string} The resulting value in rems.
+ */
+@function block-margin-multiplier($multiplier: 1) {
+  $base-value: 2;
+  @return #{$multiplier * $base-value}rem;
+}
+
+/**
+ * Calculates the padding for a block based on a provided multiplier and returns
+ * the resulting value in rems.
+ * @param {number} $multiplier - A number by which to multiply, defaults to 1.
+ * @returns {string} The resulting value in rems.
+ */
+@function block-padding-multiplier($multiplier: 1) {
+  $base-value: 1;
+  @return #{$multiplier * $base-value}rem;
+}
