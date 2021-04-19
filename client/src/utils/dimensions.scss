@@ -4,7 +4,7 @@
  * Defines the overall structure for a layout, e.g. max width and padding at
  * various breakpoints.
  */
-@mixin structured-layout() {
+@mixin structured-layout($single-column: false) {
   margin: 0 auto;
   max-width: 60rem;
   padding: 1rem;

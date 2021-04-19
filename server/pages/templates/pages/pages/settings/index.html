@@ -1,9 +1,9 @@
-{% extends 'pages/layouts/two_by_one.html' %}
+{% extends 'pages/layouts/generic.html' %}
 
 {% block title %}Settings{% endblock %}
 
-{% block two_content %}
-  <div id="pages-settings-index">
+{% block generic_content %}
+  <main id="pages-settings-index">
     <section id="cookies" class="pages-settings-index__section">
       <jr-panel class="pages-settings-index__panel">
         Cookies
@@ -40,9 +40,5 @@
         Data
       </jr-panel>
     </section>
-  </div>
-{% endblock %}
-
-{% block one_content %}
-  after
+  </main>
 {% endblock %}

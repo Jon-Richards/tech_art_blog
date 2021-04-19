@@ -1,0 +1,14 @@
+@use '../utils/breakpoints.scss';
+@use '../utils/dimensions.scss';
+
+#generic-layout {
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 1rem;
+  width: auto;
+
+  @include breakpoints.breakpoint-1280 {
+    max-width: 90rem;
+    padding: 2rem;
+  }
+}

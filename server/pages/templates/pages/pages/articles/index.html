@@ -1,25 +1,27 @@
-{% extends 'pages/layouts/single_column.html' %}
+{% extends 'pages/layouts/generic.html' %}
 
 {% block title %}
   Articles
 {% endblock %}
 
-{% block single_column_content %}
-  <pre style="display: none;">
-    {% filter force_escape %} {% debug %} {% endfilter %}
-  </pre>
+{% block generic_content %}
+  <main>
+    <pre style="display: none;">
+      {% filter force_escape %} {% debug %} {% endfilter %}
+    </pre>
 
-  {% if latest_articles_list %}
-    <ul>
-      {% for article in latest_articles_list %}
-        <li>
-          <a href="{% url 'pages:article_detail' article.slug_title %}">
-            {{ article.display_title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No articles available.</p>
-  {% endif %}
+    {% if latest_articles_list %}
+      <ul>
+        {% for article in latest_articles_list %}
+          <li>
+            <a href="{% url 'pages:article_detail' article.slug_title %}">
+              {{ article.display_title }}
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>No articles available.</p>
+    {% endif %}
+  </main>
 {% endblock %}
