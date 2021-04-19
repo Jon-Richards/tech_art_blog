@@ -17,10 +17,12 @@ module.exports = {
     'linebreak-style': [OFF],
     'valid-jsdoc': [ERROR, {
       'requireReturn': true,
-      'requireReturnDescription': false,
+      'requireReturnDescription': true,
+      'requireReturnType': false,
       'requireParamDescription': true,
+      'requireParamType': false,
       'prefer': {
-        'return': 'return',
+        'return': 'returns',
       },
     }],
   },

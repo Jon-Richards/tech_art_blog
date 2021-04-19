@@ -44,7 +44,7 @@ export class Panel extends LitElement {
 
   /**
    * Renders the component's markup.
-   * @return {TemplateResult} A template.
+   * @returns {TemplateResult} A template.
    */
   render(): TemplateResult {
     return html`
