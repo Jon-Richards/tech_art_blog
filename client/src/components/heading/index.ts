@@ -1,12 +1,12 @@
 import {
   LitElement,
   html,
-  css,
   TemplateResult,
   CSSResult,
 } from 'lit-element';
 import {ifDefined} from 'lit-html/directives/if-defined.js';
 import {validateLevel} from './validators';
+import {renderStyles} from './styles';
 
 type HeadingProps = {
   level: {
@@ -19,8 +19,37 @@ type HeadingProps = {
 
 /**
  * Renders linkable HTML Heading tags.
+ * **CSS Custom Properties**\
+ * `--color` The text color of the anchor element when NOT a link.\
+ * `--border-bottom` The style of the border at beneath the heading's
+ * text.\
+ * `--font-family` The component's font family.\
+ * `--font-size` The component's font size.\
+ * `--glyph-offset` The offset of the glyph that appears when the user focuses
+ * or hovers over the link.\
+ * `--line-height` The heading's line height property.
+ * `--link-border-bottom` The style of the bottom border when the heading is a
+ * link.\
+ * `--link-color` The text color of the anchor element when a link.\
+ * `--link-hover-border-bottom` The style of the border when the link is hovered
+ * over or focused on.\
+ * `--link-hover-color` The text color when the link is hovered.\
+ * `--link-hover-glyph-visibility` The visibility property for the glyph that
+ * appears when the link is hovered over or focused on.\
+ * `--padding-bottom` The amount of padding between the heading's text and the
+ * border beneath it.
  */
 export class Heading extends LitElement {
+  level: number;
+  slug?: string;
+
+  /** Constructor */
+  constructor() {
+    super();
+    this.level = 1;
+    this.slug = undefined;
+  }
+
   /**
    * Defines the Heading component's external API.
    */
@@ -36,74 +65,11 @@ export class Heading extends LitElement {
   }
 
   /**
-   * Lifecycle method that fires when an attribute on this component's HTML
-   * tag changes.
-   * @param name The name of the updated attribute.
-   * @param old The attribute's old value.
-   * @param value The attribute's new value.
-   * @returns void.
-   * @see https://lit-element.polymer-project.org/guide/lifecycle
-   */
-  attributeChangedCallback(
-      name: string,
-      old: string|null,
-      value: string|null
-  ): void {
-    super.attributeChangedCallback(name, old, value);
-    if (name === 'level') validateLevel(value);
-  }
-
-  level: number;
-  slug?: string;
-
-  /** Constructor */
-  constructor() {
-    super();
-    this.level = 1;
-    this.slug = undefined;
-  }
-
-  /**
    * Sets the CSS styles for this component.
    * @returns The computed styles.
    */
   static get styles(): CSSResult {
-    return css`
-      *, *::before, *::after {
-        box-sizing: border-box;
-      }
-
-      :host {
-        display: block;
-      }
-
-      .container {
-        cursor: pointer;
-        display: block;
-        position: relative;
-      }
-
-      h1, h2, h3, h4, h5, h6 {
-        border-bottom: var(--border-bottom, thin solid black);
-        display: block;
-        padding-bottom: var(--padding-bottom, 0.5rem);
-      }
-
-      .copy-container {
-        display: none;
-        overflow: visible;
-        position: absolute;
-        right: var(--copy-container-offset, calc(100% + 0.5rem));
-        top: 0;
-      }
-      .container:hover .copy-container {
-        display: initial;
-      }
-
-      .copy {
-        text-align: right;
-      }
-    `;
+    return renderStyles();
   }
 
   /**
@@ -112,13 +78,11 @@ export class Heading extends LitElement {
   render(): TemplateResult {
     return html`
       <a
-        class="container"
-        href="${ifDefined(this.slug ?? this.slug)}"
+        class="anchor ${this.slug ? 'anchor--has-slug' : ''}"
+        href="#${ifDefined(this.slug ?? this.slug)}"
       >
         ${this.computeHeadingTag(html`<slot></slot>`)}
-        <div class="copy-container">
-          <div class="copy">this is text</div>
-        </div>
+        <div class="glyph" aria-hidden="true">&#35;</div>
       </a>
     `;
   }
@@ -138,17 +102,59 @@ export class Heading extends LitElement {
   ): TemplateResult {
     switch (this.level) {
       case 2:
-        return html`<h2>${content}</h2>`;
+        return html`
+          <h2 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h2>
+        `;
       case 3:
-        return html`<h3>${content}</h3>`;
+        return html`
+          <h3 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h3>
+        `;
       case 4:
-        return html`<h4>${content}</h4>`;
+        return html`
+          <h4 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h4>
+        `;
       case 5:
-        return html`<h5>${content}</h5>`;
+        return html`
+          <h5 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h5>
+        `;
       case 6:
-        return html`<h6>${content}</h6>`;
+        return html`
+          <h6 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h6>
+        `;
       default:
-        return html`<h1>${content}</h1>`;
+        return html`
+          <h1 id="${ifDefined(this.slug ?? this.slug)}" class="heading">
+            ${content}
+          </h1>
+        `;
     }
+  }
+
+  /**
+   * Lifecycle method that fires when an attribute on this component's HTML
+   * tag changes.
+   * @param name The name of the updated attribute.
+   * @param old The attribute's old value.
+   * @param value The attribute's new value.
+   * @returns void.
+   * @see https://lit-element.polymer-project.org/guide/lifecycle
+   */
+  attributeChangedCallback(
+      name: string,
+      old: string|null,
+      value: string|null
+  ): void {
+    super.attributeChangedCallback(name, old, value);
+    if (name === 'level') validateLevel(value);
   }
 }
