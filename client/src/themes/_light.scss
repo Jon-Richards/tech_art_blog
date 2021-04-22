@@ -26,4 +26,26 @@ body.theme--light {
     --panel__border: thin solid var(--color-grey-90);
     --panel__box-shadow: 0 0.1rem 0.25rem var(--color-grey-10--alpha-25);
   }
+
+  jr-heading {
+    --border-bottom: thin solid var(--color-grey-20);
+    --color: var(--color-grey-20);
+    --link-border-bottom: thin solid var(--color-grey-20);
+    --link-color: var(--color-grey-20);
+    --link-hover-border-bottom: thin dashed var(--color-grey-30);
+    --link-hover-color: var(--color-grey-30);
+
+    &[level="1"] {
+      --font-size: 3rem;
+      margin-bottom: 2.5rem;
+    }
+    &[level="2"] {
+      --font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    &[level="3"] {
+      --font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+  }
 }

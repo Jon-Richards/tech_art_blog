@@ -6,6 +6,7 @@ import {css, CSSResult} from 'lit-element';
  * `--color` The text color of the anchor element when NOT a link.\
  * `--border-bottom` The style of the border at beneath the heading's
  * text.\
+ * `--display` The heading's display property.
  * `--font-family` The component's font family.\
  * `--font-size` The component's font size.\
  * `--glyph-offset` The offset of the glyph that appears when the user focuses
@@ -42,7 +43,7 @@ export function renderStyles(): CSSResult {
 
     .anchor {
       color: var(--color, black);
-      display: block;
+      display: var(--display, inline-block);
       position: relative;
       text-decoration: none;
     }

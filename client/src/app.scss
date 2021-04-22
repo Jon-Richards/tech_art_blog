@@ -36,6 +36,8 @@ body {
   min-height: 100vh;
 }
 
+@import './copy.scss';
+
 @import './themes/default.scss';
 @import './themes/dark.scss';
 @import './themes/light.scss';

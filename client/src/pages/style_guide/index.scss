@@ -1,3 +1,21 @@
+@use '../../utils/breakpoints.scss';
+@use '../../utils/dimensions.scss';
+
 #pages-style-guide-index {
-  font-size: 100%;
+  display: grid;
+  grid-template-areas: 'main';
+  grid-template-columns: 1fr;
+
+  @include breakpoints.breakpoint-1024 {
+    grid-template-columns: 9fr 3fr;
+  }
+
+  jr-panel {
+    --panel__width: 100%;
+    --panel__display: block;
+    margin-bottom: 2rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    } 
+  }
 }

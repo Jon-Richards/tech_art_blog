@@ -20,9 +20,10 @@ type HeadingProps = {
 /**
  * Renders linkable HTML Heading tags.
  * **CSS Custom Properties**\
- * `--color` The text color of the anchor element when NOT a link.\
  * `--border-bottom` The style of the border at beneath the heading's
  * text.\
+ * `--color` The text color fo the anchor element when NOT a link.\
+ * `--display` The heading's display property.\
  * `--font-family` The component's font family.\
  * `--font-size` The component's font size.\
  * `--glyph-offset` The offset of the glyph that appears when the user focuses

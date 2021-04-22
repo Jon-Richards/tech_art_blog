@@ -24,7 +24,7 @@ export class Panel extends LitElement {
       }
 
       :host {
-        display: inline-block;
+        display: var(--panel__display, inline-block);
       }
 
       .panel {

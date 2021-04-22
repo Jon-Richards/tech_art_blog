@@ -4,20 +4,59 @@
 
 {% block generic_content %}
   <main id="pages-style-guide-index">
-    <jr-panel>
-      <jr-heading level="1">
-        Heading Level 1
-      </jr-heading>
-      <jr-heading level="1" slug="heading-lvl-2-with-slug">
-        Heading Level 1 - With Slug
-      </jr-heading>
+    <div id="pages-style-guide-index__main">
+      <jr-panel>
+        <h1>Style Guide</h1>
+        <p>
+          This page provides an overview of the style guide by which this app
+          is designed.  Apart from general design guidelines, it contains
+          examples of copy and component specimines.
+        </p>
+        <p>
+          While the app itself adheres to this style guide, Articles are allowed
+          to be more freeform by design.
+        </p>
+        <br>
+        <h2>Semantic Markup vs Components</h2>
+        <h3>When To Use Semantic Markup</h3>
+        <p>
+          Use semantic markup when the desired effect can be achieved with a
+          single HTML tag. Examples would be when <mark>highlighting text</mark>
+          via the <code><mark /></code> tag.
+        </p>
+        <h3>When To Use Components</h3>
+        <p>
+          Use components under the any of the following criteria:
+        </p>
+        <ul>
+          <li>
+            The desired effect would require more than one element to achieve.
+          </li>
+          <li>
+            The HTML needs to be tightly coupled to JavaScript, for example if
+            html
+          </li>
+          <li>
+            The CSS
+          </li>
+        </ul>
+      </jr-panel>
+      <jr-panel>
+        <h2 id="headings">Headings</h2>
+        <h1>Heading 1</h1>
+        <h2>Heading 2</h2>
+        <h3>Heading 3</h3>
+        <h4>Heading 4</h4>
+        <h5>Heading 5</h5>
+        <h6>Heading 6</h6>
+      </jr-panel>
 
-      <jr-heading level="2">
-        Heading Level 2
-      </jr-heading>
-      <jr-heading level="2" slug="heading-lvl-3-with-slug">
-        Heading Level 2 - With Slug
-      </jr-heading>
-    </jr-panel>
+      <jr-panel>
+        <h2>Paragraphs</p>
+        <h3>Raw HTML</h3>
+        {% lorem 2 p %}
+        <h3>LitElement</h3>
+      </jr-panel>
+    </div>
   </main>
 {% endblock %}
