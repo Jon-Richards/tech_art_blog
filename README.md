@@ -56,8 +56,8 @@ a glue layer between applications.
 ## Prerequisites
 
 - Docker
-- Vagrant (optional)
-- VirtualBox (optional) 
+- VirtualBox 6.1+ (optional)
+- Vagrant 2.2.15+ (optional)
 - Python 3.9.1>=,<4.0 (optional, installed by Docker)
 - Node.js 14+ (optional, installed by Docker)
 
@@ -140,7 +140,15 @@ $ docker-compose run npm run typecheck -- --watch
 
 ### Setting Up The VM
 
-On Windows hosts, VirtualBox disables symlinking by default, which creates
+The VM is intended as an entirely optional way to run the application in a
+Linux environment, even if the host machine uses another OS.  Once provisioned,
+the environment can be further customized by the developer, providing an avenue
+for Linux based tooling.  For example, the developer may wish to SSH into the
+VM and maintain a persistent terminal session via Tmuxinator.
+
+#### Disclaimer:
+
+On Windows hosts, VirtualBox disables symlinking by default, which can create
 problems when installing NPM packages.  If you're not on Windows, skip to
 [Starting The VM](#starting-the-vm)
 
