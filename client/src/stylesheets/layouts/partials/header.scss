@@ -40,27 +40,36 @@
   &__nav-list {
     display: flex;
     flex-direction: column;
-    list-style-type: none;
     height: 100%;
+    list-style-type: none;
+    margin-bottom: 0;
 
     @include breakpoints.breakpoint-640 {
+      align-items: center;
       flex-direction: row;
       justify-content: flex-end;
-      align-items: center;
     }
   }
 
   .header__nav-list-item {
     display: block;
-    padding: 1rem;
-    border-top: thin solid var(--color-grey-80, black);
     border-bottom: thin solid var(--color-grey-80, black);
+    margin: 0;
+    padding: 1rem;
+
+    &:first-of-type {
+      border-top: thin solid var(--color-grey-80, black);
+    }
 
     @include breakpoints.breakpoint-640 {
-      display: inline-block;
-      padding: 0;
       border: none;
+      display: inline-block;
       margin-right: 1rem;
+      padding: 0;
+
+      &:first-of-type {
+        border: none;
+      }
     }
   }
   .header__nav-list-item:last-of-type {

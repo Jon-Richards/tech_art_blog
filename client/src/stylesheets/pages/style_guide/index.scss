@@ -7,7 +7,16 @@
   grid-template-columns: 1fr;
 
   @include breakpoints.breakpoint-1024 {
-    grid-template-columns: 9fr 3fr;
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas: '. main .';
+  }
+
+  @include breakpoints.breakpoint-1280 {
+    grid-template-columns: 2fr 8fr 2fr;
+  }
+
+  &__main {
+    grid-area: main;
   }
 
   jr-panel {

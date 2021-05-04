@@ -1,0 +1,27 @@
+ol {
+  display: block;
+  margin: var(--margin, 0 0 2rem 0);
+  list-style-type: var(--list-style-type, lower-roman);
+}
+ol > li {
+  margin: var(--margin, 0 0 0.5rem 2rem);
+  padding: var(--padding, 0 0 0 0.5rem);
+}
+ol > li > ol {
+  margin: var(--margin, 0.5rem 0);
+  list-style-type: var(--list-style-type, lower-alpha);
+}
+
+ul {
+  display: block;
+  margin: var(--margin, 0 0 2rem 0);
+  list-style-type: var(--list-style-type, disc);
+}
+ul > li {
+  margin: var(--margin, 0 0 0.5rem 2rem);
+  padding: var(--padding, 0 0 0 0.5rem);
+}
+ul > li > ul {
+  margin: var(--margin, 0.5rem 0);
+  list-style-type: var(--list-style-type, circle);
+}

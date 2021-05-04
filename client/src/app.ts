@@ -1,4 +1,4 @@
-import './app.scss';
+import './stylesheets/app.scss';
 import {Panel} from './components/panel';
 import {Heading} from './components/heading';
 

@@ -1,0 +1,38 @@
+@use './utils/utils';
+@use './copy/copy.scss';
+@use './themes/themes.scss';
+@use './layouts/layouts.scss';
+@use './pages/pages.scss';
+
+:root {
+  @include utils.generate-swatch('grey', rgb(141, 141, 141));
+  @include utils.generate-swatch('yellow', rgba(136, 111, 0, 1));
+  @include utils.generate-swatch('red', rgba(127, 0, 0, 1));
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-family: sans-serif;
+  color: var(--color-graphite);
+  background-color: var(--color-chalk);
+}
+
+.page {
+  display: grid;
+  grid-template-rows: min-content auto min-content;
+  justify-items: stretch;
+  height: auto;
+  min-height: 100vh;
+}
