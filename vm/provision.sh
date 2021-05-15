@@ -42,10 +42,6 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Install Pip
 # sudo apt install -y python3-pip
 
-# Copy Vim settings
-cp /vagrant/vm/.vimrc /home/vagrant/.vimrc
-cp /vagrant/vm/.vimrc /root/.vimrc
-
 echo
 echo ---------------------------
 echo +++ Provision Complete! +++

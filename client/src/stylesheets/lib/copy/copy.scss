@@ -1,0 +1,15 @@
+$settings: (
+  'namespace': 'copy'
+) !default;
+
+@use './utils.scss' with (
+  $NAMESPACE: map-get($settings, 'namespace')
+);
+
+@use './aside';
+@use './headings';
+@use './horizontal_rule';
+@use './links';
+@use './lists';
+@use './mark';
+@use './paragraph';

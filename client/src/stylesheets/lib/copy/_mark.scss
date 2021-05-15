@@ -1,4 +1,6 @@
-mark {
+@use './utils.scss';
+
+@include utils.with-namespace('mark') {
   display: inline-block;
   padding: var(--padding, 0 0.2em);
   background-color: var(--background-color, rgb(255, 255, 0));

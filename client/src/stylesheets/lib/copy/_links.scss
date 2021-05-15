@@ -1,0 +1,23 @@
+@use './utils.scss';
+
+@include utils.with-namespace('a') {
+  &:link, &:visited {
+    cursor: pointer;
+    color: var(--color, initial);
+    font-family: var(--font-family, initial);
+    font-size: var(--font-size, inherit);
+  }
+
+  &:not(&:link):hover {
+    display: inline-block;
+    cursor: pointer;
+    overflow: visible;
+    position: relative;
+  }
+  &:not(&:link):hover::before {
+    content: '#';
+    position: absolute;
+    left: -1rem;
+    display: inline-block;
+  }
+}

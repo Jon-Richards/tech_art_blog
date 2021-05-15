@@ -1,4 +1,6 @@
-aside {
+@use './utils.scss';
+
+@include utils.with-namespace('aside') {
   background-color: var(--background-color, white);
   border: var(--border, thin solid black);
   display: var(--display, block);

@@ -1,35 +1,40 @@
-h1 {
+@use './utils.scss';
+
+@include utils.with-namespace('h1') {
+  border-bottom: var(--border-bottom, thin solid);
   color: var(--color, inherit);
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 2.4rem);
   line-height: var(--line-height, 1.2);
   margin-bottom: var(--margin-bottom, 2rem);
 }
-h2 {  
+@include utils.with-namespace('h2') {
+  border-bottom: var(--border-bottom, thin solid);
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 2rem);
   margin-bottom: var(--margin-bottom, 2rem);
   line-height: var(--line-height, 1.2);
 }
-h3 {
+@include utils.with-namespace('h3') {
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 1.6rem);
-  margin-bottom: var(--margin-bottom, 1.6rem);
+  margin-bottom: var(--margin-bottom, 1rem);
   line-height: var(--line-height, 1.2);
 }
-h4 {
+@include utils.with-namespace('h4') {
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 1.2rem);
-  margin-bottom: var(--margin-bottom, 1.2rem);
+  font-weight: var(--font-weight, bold);
+  margin-bottom: var(--margin-bottom, 1rem);
   line-height: var(--line-height, 1.2);
 }
-h5 {
+@include utils.with-namespace('h5') {
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 1rem);
   margin-bottom: var(--margin-bottom, 1rem);
   line-height: var(--line-height, 1.2);
 }
-h6 {
+@include utils.with-namespace('h6') {
   font-family: var(--font-family, sans-serif);
   font-size: var(--font-size, 0.8rem);
   margin-bottom: var(--margin-bottom, 1rem);

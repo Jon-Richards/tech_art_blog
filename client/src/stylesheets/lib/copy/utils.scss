@@ -1,0 +1,18 @@
+$NAMESPACE: null !default;
+
+/**
+ * Renders a namespaced selector based on the provided selector and a namespace
+ * configuration property.  The resulting selectors of this mixin will resolve
+ * as either a child of the namespace or as an instance of the selector param
+ * with the namespace applied.
+ *
+ * @example
+ * @use './utils.scss' with ($NAMESPACE: 'foo');
+ * @include utils.with-namespace('p') { ... }
+ * // renders: .foo p, .p.foo { ... }
+ */
+@mixin with-namespace($selector) {
+  .#{$NAMESPACE} #{$selector}, #{$selector}.#{$NAMESPACE} {
+    @content;
+  }
+}
