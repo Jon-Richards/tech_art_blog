@@ -2,5 +2,5 @@
 
 @include utils.with-namespace('hr') {
   display: block;
-  margin: var(--margin, 4rem 0);
+  margin: var(--margin, 2rem 0);
 }

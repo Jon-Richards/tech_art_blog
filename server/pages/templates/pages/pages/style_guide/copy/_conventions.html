@@ -1,0 +1,67 @@
+<jr-panel>
+  <div class="copy">
+    <h2>Conventions</h2>
+    <p>
+      The styles below are based on type selectors (HTML tags) so that the
+      content itself is stylesheet agnostic.
+    </p>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;div class="copy">
+            &lt;h1>Hello World!&lt;/h1>
+            &lt;p>
+              The h1 and this p tag will have copy styles.
+            &lt;/p>
+          &lt;/div>
+        </code>
+      </pre>
+    </div>
+    <br>
+    <p>
+      Styles can also be applied in-line using the prefix "copy" followed by a
+      hyphen and the name of the tag, like so:
+    </p>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;p class="copy-p">
+            This paragraph, and only this paragraph, will have copy styling.
+          &lt;/p>
+        </code>
+      </pre>
+    </div>
+    <hr>
+    <h3>Intents</h3>
+    <p>
+      In some instances, styling beyond simple type selectors is necessary.  For
+      example, a paragraph might serve as an introduction to a larger body of
+      text, or an aside might serve as a warning.  It's necessary to communicate
+      these intents to the user visually.
+    </p>
+    <p>
+      The data-intent convention provides a non-aggressive API for communicating
+      the intent of the markup to the application.  HTML data attributes are
+      easily accessed by both CSS and JS, and don't collide with the HTML
+      specification.
+    </p>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;p class="copy-p" data-intent="intro">
+            This paragraph, and only this paragraph, will have copy styling with
+            special formatting for intro's.
+          &lt;/p>
+        </code>
+      </pre>
+    </div>
+    <br>
+    <br>
+    <aside data-intent="warning">
+      The Intents convention is not a substitute for the ARIA specification or
+      semantic HTML tags and attributes.  It's designed as a way to fill in the
+      gaps where a standard or more widely supported API fails to meet the
+      design's needs.
+    </aside>
+  </div>
+</jr-panel>

@@ -1,4 +1,5 @@
 @use '../utils/dimensions.scss';
+@use '../utils/breakpoints.scss';
 
 body.theme--light {
   #background-area {
@@ -46,6 +47,63 @@ body.theme--light {
     &[level="3"] {
       --font-size: 1.5rem;
       margin-bottom: 1.5rem;
+    }
+  }
+
+  .copy {
+    $header-font-family: 'Monsterrat', sans-serif;
+    
+    h1 {
+      --border-bottom: none;
+      --color: var(--color-grey-10);
+      --font-family: #{$header-font-family};
+      --font-size: 2.4rem;
+      --font-weight: 400;
+      
+      @include breakpoints.breakpoint-768 {
+        --font-size: 3.8rem;
+      }
+      
+      &:after {
+        border-bottom: thin solid var(--color-grey-10);
+        content: '';
+        display: block;
+        margin: 2rem 0;
+        width: 5rem;
+      }
+    }
+    h2 {
+      --border-bottom: none;
+      --font-family: #{$header-font-family};
+      --font-size: 2.4rem;
+      --font-weight: 400;
+    }
+    h3 {
+      --font-family: #{$header-font-family};
+      --font-size: 1.8rem;
+      --font-weight: 400;
+    }
+    h4, h5, h6 {
+      --font-family: #{$header-font-family};
+      --font-weight: 400;
+    }
+    p {
+      --color: var(--color-grey-10);
+      --font-size: 1.4rem;
+      --line-height: 1.8;
+      
+      &[data-intent="intro"] {
+        --color: var(--color-grey-40);
+        --font-size: 1.6rem;
+      }
+    }
+    hr {
+      display: block;
+      max-width: 5rem;
+    }
+    strong {
+      color: var(--color-grey-10);
+      font-weight: 600;
     }
   }
 }

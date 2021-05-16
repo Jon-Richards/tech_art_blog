@@ -10,7 +10,7 @@
             &lt;/p>
           &lt;/div>
 
-          &lt;p class="copy">
+          &lt;p class="copy-p">
             This will also have copy styling.
           &lt;/p>
         </code>
@@ -18,5 +18,20 @@
     </div>
     <br>
     {% lorem 2 p %}
+    <hr>
+    <h3>Intents</h3>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;p class="copy-p" data-intent="intro">
+            This paragraph is also an introduction.
+          &lt;/p>
+        </code>
+      </pre>
+    </div>
+    <br>
+    <p class="copy-p" data-intent="intro">
+      {% lorem 1 %}
+    </p>
   </div>
 </jr-panel>
