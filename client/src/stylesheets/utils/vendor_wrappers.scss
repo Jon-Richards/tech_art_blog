@@ -1,0 +1,12 @@
+/**
+ * Prevents a scaling issue with Prism.js in which it fails to shrink with the
+ * size of its container.
+ *
+ * @example
+ * <div class="prism-wrapper">
+ *  <pre><code class="language-html">Foo</code></pre>
+ * </div>
+ */
+.prism-wrapper {
+  display: grid;
+}

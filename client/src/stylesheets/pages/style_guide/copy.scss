@@ -1,0 +1,30 @@
+@use '../../utils/breakpoints.scss';
+@use '../../utils/dimensions.scss';
+
+#pages-style-guide-copy {
+  display: grid;
+  grid-template-areas: 'main';
+  grid-template-columns: 1fr;
+
+  @include breakpoints.breakpoint-1024 {
+    grid-template-columns: 1fr 10fr 1fr;
+    grid-template-areas: '. main .';
+  }
+
+  @include breakpoints.breakpoint-1280 {
+    grid-template-columns: 2fr 8fr 2fr;
+  }
+
+  &__main {
+    grid-area: main;
+  }
+
+  jr-panel {
+    --panel__width: 100%;
+    --panel__display: block;
+    margin-bottom: 2rem;
+    &:last-of-type {
+      margin-bottom: 0;
+    } 
+  }
+}

@@ -5,11 +5,19 @@
 {% block generic_content %}
   <main id="pages-style-guide-index">
     <div id="pages-style-guide-index__main">
-      {% include './_overview.html' %}
-      {% include './_headings.html' %}
-      {% include './_paragraphs.html' %}
-      {% include './_links.html' %}
-      {% include './_lists.html' %}
+      <jr-panel>
+        <div class="copy">
+          <h1>Style Guide</h1>
+          <p>
+            This page provides an overview of the style guide by which this app
+            is designed.  It contains usage guidelines and examples.
+          </p>
+          <p>
+            The guide is not exhaustive and intended to cover only the use cases that
+            appear within this application.
+          </p>
+        </div>
+      </jr-panel>
     </div>
   </main>
 {% endblock %}

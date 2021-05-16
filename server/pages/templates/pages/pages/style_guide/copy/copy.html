@@ -1,0 +1,25 @@
+{% extends 'pages/layouts/generic.html' %}
+
+{% block title %}Style Guide - Copy{% endblock %}
+
+{% block styles %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'pages/prism.css' %}">
+{% endblock %}
+
+{% block generic_content %}
+  <main id="pages-style-guide-copy">
+    <div id="pages-style-guide-copy__main">
+      {% include './_overview.html' %}
+      {% include './_headings.html' %}
+      {% include './_paragraphs.html' %}
+      {% include './_links.html' %}
+      {% include './_lists.html' %}
+    </div>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  {% load static %}
+  <script type="text/javascript" src="{% static 'pages/prism.js' %}"></script>
+{% endblock %}
