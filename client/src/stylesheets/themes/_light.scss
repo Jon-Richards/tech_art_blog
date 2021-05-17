@@ -53,17 +53,31 @@ body.theme--light {
   .copy {
     $header-font-family: 'Monsterrat', sans-serif;
     
+    aside {
+      --background-color: var(--color-grey-90--alpha-50);
+      --border-bottom: none;
+      --border-left: 0.5rem solid var(--color-grey-70);
+      --border-right: none;
+      --border-top: none;
+      --font-size: 1.2rem;
+      --padding: 1rem;
+      @include breakpoints.breakpoint-768 {
+        --font-size: 1.4rem;
+      }
+      p {
+        --font-size: inherit;
+      }
+    }
+
     h1 {
       --border-bottom: none;
       --color: var(--color-grey-10);
       --font-family: #{$header-font-family};
       --font-size: 2.4rem;
       --font-weight: 400;
-      
       @include breakpoints.breakpoint-768 {
         --font-size: 3.8rem;
       }
-      
       &:after {
         border-bottom: thin solid var(--color-grey-10);
         content: '';
@@ -87,19 +101,20 @@ body.theme--light {
       --font-family: #{$header-font-family};
       --font-weight: 400;
     }
+
+    hr {
+      display: block;
+      max-width: 5rem;
+    }
+
     p {
       --color: var(--color-grey-10);
       --font-size: 1.4rem;
       --line-height: 1.8;
-      
       &[data-intent="intro"] {
         --color: var(--color-grey-40);
         --font-size: 1.6rem;
       }
-    }
-    hr {
-      display: block;
-      max-width: 5rem;
     }
     strong {
       color: var(--color-grey-10);
