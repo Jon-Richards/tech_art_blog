@@ -7,9 +7,10 @@ $settings: (
 );
 
 @use './aside';
-@use './headings';
+@use './heading';
 @use './horizontal_rule';
-@use './links';
-@use './lists';
+@use './link';
+@use './list';
 @use './mark';
 @use './paragraph';
+@use './table';

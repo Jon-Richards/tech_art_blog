@@ -51,8 +51,6 @@ body.theme--light {
   }
 
   .copy {
-    $header-font-family: 'Monsterrat', sans-serif;
-    
     aside {
       --background-color: var(--color-grey-90--alpha-50);
       --border-bottom: none;
@@ -69,6 +67,7 @@ body.theme--light {
       }
     }
 
+    $header-font-family: 'Monsterrat', sans-serif;
     h1 {
       --border-bottom: none;
       --color: var(--color-grey-10);
@@ -119,6 +118,13 @@ body.theme--light {
     strong {
       color: var(--color-grey-10);
       font-weight: 600;
+    }
+
+    a:link, a:visited {
+      --color: var(--color-grey-0);
+      --color--hover: var(--color-grey-0);
+      --decoration-color: var(--color-yellow-70);
+      --font-family: 'Monsterrat', sans-serif;
     }
   }
 }

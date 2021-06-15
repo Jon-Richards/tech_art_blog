@@ -1,0 +1,42 @@
+@use './utils.scss';
+
+@include utils.with-namespace('a') {
+  --color: blue;
+  --color--hover: white;
+  --decoration-color: blue;
+  --font-family: inherit;
+  --font-size: inherit;
+  --font-weight: 600;
+  
+  &:link,
+  &:visited {
+    cursor: pointer;
+    color: var(--color);
+    display: inline-block;
+    padding: 0rem;
+    background-image: linear-gradient(
+      90deg,
+      var(--decoration-color) 0%,
+      var(--decoration-color) 100%
+    );
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 0.25rem;
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: var(--font-weight);
+    text-decoration: none;
+    transition:
+      background-size 0.15s,
+      color 0.15s;
+  }
+  &:link:active,
+  &:link:focus,
+  &:link:hover,
+  &:visited:active,
+  &:visited:focus,
+  &:visited:hover {
+    background-size: 100% 100%;
+    color: var(--color--hover);
+  }
+}

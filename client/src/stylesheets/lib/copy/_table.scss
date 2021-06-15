@@ -1,0 +1,82 @@
+@use './utils.scss';
+
+@include utils.with-namespace('table') {
+  --column-background-color--even: none;
+  --column-background-color--odd: none;
+  
+  --row-background-color--even: none;
+  --row-background-color--odd: none;
+
+  --table-cell-border: thin solid black;
+  --td-padding: 0.5rem;
+  --th-padding: 0.5rem 2rem 0.5rem 0.5rem;
+  
+  --column-heading-color: black;
+  --column-heading-text-transform: none;
+  --column-heading-text-weight: 400;
+  
+  --row-heading-color: black;
+  --row-heading-text-transform: none;
+  --row-heading-text-weight: 400;
+
+  display: block;
+  height: auto;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  width: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  &-wrapper {
+    display: grid;
+  }
+
+  caption {
+    caption-side: bottom;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  tr {
+    border: var(--table-cell-border);
+
+    &:nth-child(even) {
+      background-color: var(--row-background-color--even);
+    }
+
+    &:nth-child(even) {
+      background-color: var(--row-background-color--odd);
+    }
+  }
+
+  th {
+    border-right: var(--table-cell-border);
+    padding: var(--th-padding);
+    text-align: left;
+
+    &[scope="col"] {
+      color: var(--column-heading-color);
+      font-weight: var(--column-heading-weight);
+      text-transform: var(--column-heading-text-transform);
+    }
+
+    &[scope="row"] {
+      color: var(--row-heading-color);
+      font-weight: var(--row-heading-weight);
+      text-transform: var(--row-heading-text-transform);
+    }
+  }
+
+  td {
+    border-right: var(--table-cell-border);
+    padding: var(--td-padding);
+
+    &:nth-child(even) {
+      background-color: var(--column-background-color--even);
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--column-background-color--odd);
+    }
+  }
+}

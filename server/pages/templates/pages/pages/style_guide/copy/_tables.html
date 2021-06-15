@@ -1,0 +1,129 @@
+<jr-panel>
+  <div class="copy">
+    <h2>Tables</h2>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;div class="copy">
+            &lt;table>
+              &lt;caption>This is a demo table.&lt;/caption>
+              &lt;thead>
+                &lt;tr>
+                  &lt;th scope="col">Column 1 Header&lt;/th>
+                  &lt;th scope="col">Column 2 Header&lt;/th>
+                &lt;/tr>
+              &lt;/thead>
+              &lt;tbody>
+                &lt;tr>
+                  &lt;th scope="row">Content&lt;/th>
+                  &lt;td>Column 1 content.&lt;/td>
+                  &lt;td>Column 2 content.&lt;/td>
+                &lt;/tr>
+              &lt;/tbody>
+            &lt;/table>
+          &lt;/div>
+        </code>
+      </pre>
+    </div>
+    <br>
+
+    <div class="copy-table-wrapper">
+      <table>
+        <caption>This is a demo table.</caption>
+        <thead>
+          <tr>
+            <th scope="col">
+              Column 1
+            </th>
+            <th scope="col">
+              Column 2
+            </th>
+            <th scope="col">
+              Column 3
+            </th>
+            <th scope="col">
+              Column 4
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Apple</th>
+            <td>This is the apple row.</td>
+            <td>It's nothing special.</td>
+            <td>So on and so on.</td>
+          </tr>
+          <tr>
+            <th scope="row">Orange</th>
+            <td>This is the orange row.</td>
+            <td>It's nothing special.</td>
+            <td>So on and so on.</td>
+          </tr>
+          <tr>
+            <th scope="row">Banana</th>
+            <td>This is the banana row.</td>
+            <td>It's nothing special.</td>
+            <td>So on and so on.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr>
+    <h3>CSS API</h3>
+    <div class="copy-table-wrapper">
+      <table>
+        <caption>Table CSS Custom Properties</caption>
+        <tr>
+          <th scope="column">
+            Name
+          </th>
+          <th scope="column">
+            Description
+          </th>
+        </tr>
+        <tr>
+          <td>
+            <code>
+              --column-background-color--even
+            </code>
+          </td>
+          <td>Background color for even columns.</td>
+        </tr>
+
+        <tr>
+          <td>
+            <code>
+              --column-background-color--odd: none;
+            </code>
+          </td>
+          <td>Background color for odd columns.</td>
+        </tr>
+
+        <tr>
+          <td>
+            <code>
+              --row-background-color--even: none;
+            </code>
+          </td>
+          <td>Background color for even rows.</td>
+        </tr>
+          <!--
+          --row-background-color--odd: none;
+
+          --table-cell-border: thin solid black;
+          --td-padding: 0.5rem;
+          --th-padding: 0.5rem 2rem 0.5rem 0.5rem;
+          
+          --column-heading-color: black;
+          --column-heading-text-transform: none;
+          --column-heading-text-weight: 400;
+          
+          --row-heading-color: black;
+          --row-heading-text-transform: none;
+          --row-heading-text-weight: 400;
+          -->
+        </tr>
+      </table>
+    </div>
+  </div>
+</jr-panel>
