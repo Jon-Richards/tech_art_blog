@@ -75,7 +75,10 @@
         <caption>Table CSS Custom Properties</caption>
         <tr>
           <th scope="column">
-            Name
+            Custom Property
+          </th>
+          <th>
+            Type
           </th>
           <th scope="column">
             Description
@@ -83,28 +86,31 @@
         </tr>
         <tr>
           <td>
-            <code>
+            <code class="language-css">
               --column-background-color--even
             </code>
           </td>
+          <td>Color</td>
           <td>Background color for even columns.</td>
         </tr>
 
         <tr>
           <td>
-            <code>
-              --column-background-color--odd: none;
+            <code class="language-css">
+              --column-background-color--odd
             </code>
           </td>
+          <td>Color</td>
           <td>Background color for odd columns.</td>
         </tr>
 
         <tr>
           <td>
-            <code>
-              --row-background-color--even: none;
+            <code class="language-css">
+              --row-background-color--even
             </code>
           </td>
+          <td>Color</td>
           <td>Background color for even rows.</td>
         </tr>
           <!--
@@ -122,8 +128,29 @@
           --row-heading-text-transform: none;
           --row-heading-text-weight: 400;
           -->
-        </tr>
       </table>
     </div>
   </div>
+  <jr-table
+    data-caption="this is a caption."
+    data-head='["Custom Property", "Type", "Description"]'
+    data-rows='[
+      {
+        "hasHeading": true,
+        "cells": [
+          "This is cell 1",
+          "This is cell 2",
+          "This is cell 3"
+        ]
+      },
+      {
+        "hasHeading": false,
+        "cells": [
+          "This is cell 1",
+          "This is cell 2",
+          "This is cell 3"
+        ]
+      }
+    ]'
+  ></jr-table>
 </jr-panel>

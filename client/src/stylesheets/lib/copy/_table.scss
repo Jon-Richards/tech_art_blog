@@ -39,7 +39,7 @@
 
   tr {
     border: var(--table-cell-border);
-
+    width: fit-content;
     &:nth-child(even) {
       background-color: var(--row-background-color--even);
     }
