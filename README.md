@@ -12,8 +12,10 @@ things relating to technical art.
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
   - [Running The Project](#running-the-project)
+  - [Logging](#logging)
   - [Using the VM](#using-the-vm)
     - [Setting Up The VM](#setting-up-the-vm)
+      - [Disclaimer:](#disclaimer)
     - [Starting The VM](#starting-the-vm)
   - [Application Structure](#application-structure)
     - [Back-end](#back-end)
@@ -134,6 +136,28 @@ $ docker-compose run npm run build:dist
 ```
 $ docker-compose run npm run typecheck -- --watch
 ```
+
+<a name="logging"></a>
+## Logging
+
+Server logs should be saved to `./server/logs/output.log`.
+
+`$ docker logs` will output logs from a given container, e.g. Django, which
+will omit certain messages from a file given the logger settings.
+`$ docker-compose logs` will output logs for a **service**, which will reflect
+the literal output to the console when written to a file.
+
+Output a container's logs to a file, limit the output to 10m:
+```
+$ docker logs --tail 10m <container name>
+```
+
+Tail a given containers logs, printing onto the last 100 lines:
+```
+$ docker logs --follow --tail 100 <container name>
+```
+
+> [Additional reading on Docker's logging feature.](https://docs.docker.com/config/containers/logging/)
 
 <a name="using_the_vm"></a>
 ## Using the VM
