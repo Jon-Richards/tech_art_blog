@@ -1,0 +1,21 @@
+{% extends 'pages/layouts/generic.html' %}
+
+{% block title %}Style Guide - Components{% endblock %}
+
+{% block styles %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'pages/prism.css' %}">
+{% endblock %}
+
+{% block generic_content %}
+  <main id="pages-style-guide-components">
+    <div id="pages-style-guide-components__main">
+      {% include './_overview.html' %}
+    </div>
+  </main>
+{% endblock %}
+
+{% block scripts %}
+  {% load static %}
+  <script type="text/javascript" src="{% static 'pages/prism.js' %}"></script>
+{% endblock %}

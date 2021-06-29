@@ -49,3 +49,10 @@ class StyleGuideCopyView(TemplateView):
     return context
 
   template_name = 'pages/pages/style_guide/copy/copy.html'
+
+class StyleGuideComponentsView(TemplateView):
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    return context
+
+  template_name = 'pages/pages/style_guide/components/components.html'

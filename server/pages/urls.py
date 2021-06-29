@@ -11,5 +11,7 @@ urlpatterns = [
   path('settings/', views.SettingsIndexView.as_view(), name="settings"),
   path('style-guide/', views.StyleGuideIndexView.as_view(), name="style-guide"),
   path('style-guide/copy',
-      views.StyleGuideCopyView.as_view(), name="style-guide-copy")
+      views.StyleGuideCopyView.as_view(), name="style-guide-copy"),
+  path('style-guide/components',
+      views.StyleGuideComponentsView.as_view(), name="style-guide-components")
 ]
