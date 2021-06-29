@@ -97,11 +97,13 @@ export class Table extends LitElement {
    */
   render(): TemplateResult {
     return html`
-      <table>
-        <caption>${this.caption}</caption>
-        ${this.renderHeader()}
-        ${this.renderBody()}
-      </table>
+      <div class="wrapper">
+        <table>
+          <caption>${this.caption}</caption>
+          ${this.renderHeader()}
+          ${this.renderBody()}
+        </table>
+      </div>
     `;
   }
 

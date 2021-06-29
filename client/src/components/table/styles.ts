@@ -21,6 +21,7 @@ export function renderStyles(): CSSResult {
     }
 
     :host {
+      display: block;
       --column-background-color--even: none;
       --column-background-color--odd: none;
       
@@ -38,6 +39,10 @@ export function renderStyles(): CSSResult {
       --row-heading-color: black;
       --row-heading-text-transform: none;
       --row-heading-text-weight: 400;
+    }
+
+    .wrapper {
+      display: grid;
     }
 
     table {
