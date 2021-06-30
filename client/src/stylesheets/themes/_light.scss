@@ -51,6 +51,13 @@ body.theme--light {
   }
 
   .copy {
+    a:link, a:visited {
+      --color: var(--color-grey-0);
+      --color--hover: var(--color-grey-0);
+      --decoration-color: var(--color-yellow-70);
+      --font-family: 'Monsterrat', sans-serif;
+    }
+
     aside {
       --background-color: var(--color-grey-90--alpha-50);
       --border-bottom: none;
@@ -106,6 +113,11 @@ body.theme--light {
       max-width: 5rem;
     }
 
+    ol {
+      --color: var(--color-grey-0);
+      --font-size: 1.2rem;
+    }
+
     p {
       --color: var(--color-grey-10);
       --font-size: 1.4rem;
@@ -115,16 +127,15 @@ body.theme--light {
         --font-size: 1.6rem;
       }
     }
+
     strong {
       color: var(--color-grey-10);
       font-weight: 600;
     }
 
-    a:link, a:visited {
+    ul {
       --color: var(--color-grey-0);
-      --color--hover: var(--color-grey-0);
-      --decoration-color: var(--color-yellow-70);
-      --font-family: 'Monsterrat', sans-serif;
+      --font-size: 1.2rem;
     }
   }
 }
