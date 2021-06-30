@@ -5,9 +5,9 @@
       <a href="/">I am a link.</a>
     </p>
     <p>
-      Links and anchor elements are designated specifically for navigation.  Links
-      should not mixed with buttons, which serve a different purpose from a
-      semantic standpoint.
+      Use links and anchor elements are designed specifically for navigation.
+      They should not be intermixed with buttons, which have entirely different
+      semantic meaning.
     </p>
 
     <div class="prism-wrapper">
@@ -24,53 +24,45 @@
     <br>
 
     <h3>CSS Custom Property API</h3>
-    <!--
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Type</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tr>
-        <td>--color</td>
-        <td>Color</td>
-        <th>Assignes the color of the link.</th>
-      </tr>
-    </table>
-    -->
 
-    <h3>Good</h3>
-    <p>
-      This is an interesting YouTube video entitled 
-      <a
-        href="https://www.youtube.com/watch?v=6avJHaC3C2U"
-        target="_blank"
-        rel="noopener"
-      >
-        The Art of Code
-      </a>
-      by Dylan Beattie.
-    </p>
-    <ul>
-      <li>The link has a meaningful text label.</li>
-      <li>The link cannot be disabled.</li>
-    </ul>
+      <pre>
+        <code class="language-css">
+          .copy a:link, .copy-a:link {
+            --color: green;
+          }
+        </code>
+      </pre>
 
-    <h3>Bad</h3>
-    <p>
-      <a href="#">Open Modal</a>
-    </p>
-    <p>
-      Links are not the same as buttons, which perform UI operations, typically
-      without losing context, e.g. submitting a form or opening a modal.
-    </p>
-    <h4>Additional Conventions</h4>
-    <ul>
-      <li>
-        External links should always open in a new tab.
-      </li>
-    </ul>
+      <br>
+
+      <jr-table
+        data-head='[
+          "Name",
+          "Type",
+          "Description"
+        ]'
+        data-rows='[
+          {"cells": [
+              "--color", "Color", "The inactive color for the link&#39s text."
+          ]},
+          {"cells": [
+              "--hover-color", "Color", "The color of the link&#39s text when hovered or focused on."
+          ]},
+          {"cells": [
+            "--decoration-color", "Color", "The color of the link&#39s decorative effect."
+          ]},
+          {"cells": [
+            "--font-family", "String", "The link&#39s font-family CSS property."
+          ]},
+          {"cells": [
+            "--font-size", "String", "The link&#39s font-size CSS property."
+          ]},
+          {"cells": [
+            "--font-weight", "Number", "The link&#39s font-weight CSS property."
+          ]}
+        ]'
+        data-caption="CSS custom properties for configuring link styles."
+        >
+      </jr-table>
   </div>
 </jr-panel>

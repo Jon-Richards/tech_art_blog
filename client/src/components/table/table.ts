@@ -16,12 +16,12 @@ type TableBodyRow = {
  * Renders an HTML table.
  * @example
  * <my-table
- *  head="[
+ *  data-head="[
  *    'Heading For Column 1',
  *    'Heading For Column 2',
  *    'Heading For Column 3',
  *  ]"
- *  body="[
+ *  data-body="[
  *    {
  *      hasHeading: true,
  *      cells: [
@@ -39,7 +39,7 @@ type TableBodyRow = {
  *      ]
  *    }
  *  ]"
- *  caption="This is a caption."
+ *  data-caption="This is a caption."
  * ></my-table>
  */
 export class Table extends LitElement {

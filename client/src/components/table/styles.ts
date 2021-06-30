@@ -29,8 +29,8 @@ export function renderStyles(): CSSResult {
       --row-background-color--odd: none;
 
       --table-cell-border: thin solid black;
-      --td-padding: 0.5rem;
-      --th-padding: 0.5rem 2rem 0.5rem 0.5rem;
+      --td-padding: 1rem;
+      --th-padding: 0.5rem 2rem 0.5rem 1rem;
       
       --column-heading-color: black;
       --column-heading-text-transform: none;
@@ -58,7 +58,7 @@ export function renderStyles(): CSSResult {
     caption {
       caption-side: bottom;
       font-size: 0.8rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
     }
 
     tr {
