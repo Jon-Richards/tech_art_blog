@@ -13,11 +13,11 @@
   
   --column-heading-color: black;
   --column-heading-text-transform: none;
-  --column-heading-text-weight: 400;
+  --column-heading-font-weight: 400;
   
   --row-heading-color: black;
   --row-heading-text-transform: none;
-  --row-heading-text-weight: 400;
+  --row-heading-font-weight: 400;
 
   display: block;
   height: auto;
@@ -56,13 +56,13 @@
 
     &[scope="col"] {
       color: var(--column-heading-color);
-      font-weight: var(--column-heading-weight);
+      font-weight: var(--column-heading-font-weight);
       text-transform: var(--column-heading-text-transform);
     }
 
     &[scope="row"] {
       color: var(--row-heading-color);
-      font-weight: var(--row-heading-weight);
+      font-weight: var(--row-heading-font-weight);
       text-transform: var(--row-heading-text-transform);
     }
   }

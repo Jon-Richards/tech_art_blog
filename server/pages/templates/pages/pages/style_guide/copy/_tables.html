@@ -5,22 +5,27 @@
       <pre>
         <code class="language-html">
           &lt;div class="copy">
-            &lt;table>
-              &lt;caption>This is a demo table.&lt;/caption>
-              &lt;thead>
-                &lt;tr>
-                  &lt;th scope="col">Column 1 Header&lt;/th>
-                  &lt;th scope="col">Column 2 Header&lt;/th>
-                &lt;/tr>
-              &lt;/thead>
-              &lt;tbody>
-                &lt;tr>
-                  &lt;th scope="row">Content&lt;/th>
-                  &lt;td>Column 1 content.&lt;/td>
-                  &lt;td>Column 2 content.&lt;/td>
-                &lt;/tr>
-              &lt;/tbody>
-            &lt;/table>
+            &lt;!--
+              Required for the table to scroll horizontally on small screens.
+            -->
+            &lt;div class="copy-table-wrapper">
+              &lt;table>
+                &lt;caption>This is a demo table.&lt;/caption>
+                &lt;thead>
+                  &lt;tr>
+                    &lt;th scope="col">Column 1 Header&lt;/th>
+                    &lt;th scope="col">Column 2 Header&lt;/th>
+                  &lt;/tr>
+                &lt;/thead>
+                &lt;tbody>
+                  &lt;tr>
+                    &lt;th scope="row">Content&lt;/th>
+                    &lt;td>Column 1 content.&lt;/td>
+                    &lt;td>Column 2 content.&lt;/td>
+                  &lt;/tr>
+                &lt;/tbody>
+              &lt;/table>
+            &lt;/div>
           &lt;/div>
         </code>
       </pre>
@@ -68,89 +73,93 @@
         </tbody>
       </table>
     </div>
+    <br>
+    <p class="copy-p">
+      There also exists a custom element for a table.  The custom element is
+      (slightly) less verbose, implements its own wrapper element, and is purely
+      data-driven.
+    </p>
+    <div class="prism-wrapper">
+      <pre>
+        <code class="language-html">
+          &lt;jr-table
+            data-caption="This is a caption."
+            data-head='["Column 1", "Column 2", "Column 3"]'
+            data-rows='[
+              {
+                "hasHeading": true,
+                "cells": ["This is cell 1", "This is cell 2", "This is cell 3"]
+              },
+              {
+                "cells": ["This is cell 1", "This is cell 2", "This is cell 3"]
+              }
+            ]'
+          >&lt;/jr-table>
+        </code>
+      </pre>
+    </div>
+    <br>
+    <jr-table
+      data-caption="This is a caption."
+      data-head='["Column 1", "Column 2", "Column 3"]'
+      data-rows='[
+        {
+          "hasHeading": true,
+          "cells": [
+            "This is cell 1",
+            "This is cell 2",
+            "This is cell 3"
+          ]
+        },
+        {
+          "cells": [
+            "This is cell 1",
+            "This is cell 2",
+            "This is cell 3"
+          ]
+        }
+      ]'
+    ></jr-table>
     <hr>
     <h3>CSS API</h3>
-    <div class="copy-table-wrapper">
-      <table>
-        <caption>Table CSS Custom Properties</caption>
-        <tr>
-          <th scope="column">
-            Custom Property
-          </th>
-          <th>
-            Type
-          </th>
-          <th scope="column">
-            Description
-          </th>
-        </tr>
-        <tr>
-          <td>
-            <code class="language-css">
-              --column-background-color--even
-            </code>
-          </td>
-          <td>Color</td>
-          <td>Background color for even columns.</td>
-        </tr>
 
-        <tr>
-          <td>
-            <code class="language-css">
-              --column-background-color--odd
-            </code>
-          </td>
-          <td>Color</td>
-          <td>Background color for odd columns.</td>
-        </tr>
+    <!--
+      --column-background-color--even: none;
+      --column-background-color--odd: none;
+      
+      --row-background-color--even: none;
+      --row-background-color--odd: none;
 
-        <tr>
-          <td>
-            <code class="language-css">
-              --row-background-color--even
-            </code>
-          </td>
-          <td>Color</td>
-          <td>Background color for even rows.</td>
-        </tr>
-          <!--
-          --row-background-color--odd: none;
-
-          --table-cell-border: thin solid black;
-          --td-padding: 0.5rem;
-          --th-padding: 0.5rem 2rem 0.5rem 0.5rem;
-          
-          --column-heading-color: black;
-          --column-heading-text-transform: none;
-          --column-heading-text-weight: 400;
-          
-          --row-heading-color: black;
-          --row-heading-text-transform: none;
-          --row-heading-text-weight: 400;
-          -->
-      </table>
-    </div>
+      --table-cell-border: thin solid black;
+      --td-padding: 1rem;
+      --th-padding: 0.5rem 2rem 0.5rem 1rem;
+      
+      --column-heading-color: black;
+      --column-heading-text-transform: none;
+      --column-heading-text-weight: 400;
+      
+      --row-heading-color: black;
+      --row-heading-text-transform: none;
+      --row-heading-text-weight: 400;
+    -->
+    <jr-table
+      data-caption='CSS custom properties for styling a table.'
+      data-head='["Name", "Type", "Description"]'
+      data-rows='[
+        {"cells": ["--column-background-color--even", "Color", "Background color for even columns."]},
+        {"cells": ["--column-background-color--odd", "Color", "Background color for odd columns."]},
+        {"cells": ["--row-background-color--even", "Color", "Background color for even rows."]},
+        {"cells": ["--row-background-color--odd", "Color", "Background color for odd rows."]},
+        {"cells": ["--table-cell-border", "String", "CSS shorthand property for the border of the tabl&#39s cells."]},
+        {"cells": ["--td-padding", "String", "The CSS shorthand padding rule for td elements."]},
+        {"cells": ["--th-padding", "String", "The CSS shorthand padding rule for th elements."]},
+        {"cells": ["--column-heading-color", "Color", "The text color for column headers."]},
+        {"cells": ["--column-heading-text-transform", "String", "The text transform rule for column headings."]},
+        {"cells": ["--column-heading-font-weight", "Number", "The font-weight rule for column headings."]},
+        {"cells": ["--row-heading-color", "Color", "The text color for row headers."]},
+        {"cells": ["--row-heading-text-transform", "String", "The text transform rule for row headings."]},
+        {"cells": ["--row-heading-font-weight", "Number", "The font-weight rule for row headings."]}
+      ]'
+    ></jr-table>
   </div>
-  <jr-table
-    data-caption="this is a caption."
-    data-head='["Custom Property", "Type", "Description"]'
-    data-rows='[
-      {
-        "hasHeading": true,
-        "cells": [
-          "This is cell 1",
-          "This is cell 2",
-          "This is cell 3"
-        ]
-      },
-      {
-        "hasHeading": false,
-        "cells": [
-          "This is cell 1",
-          "This is cell 2",
-          "This is cell 3"
-        ]
-      }
-    ]'
-  ></jr-table>
 </jr-panel>

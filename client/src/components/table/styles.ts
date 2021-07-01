@@ -34,11 +34,11 @@ export function renderStyles(): CSSResult {
       
       --column-heading-color: black;
       --column-heading-text-transform: none;
-      --column-heading-text-weight: 400;
+      --column-heading-font-weight: 400;
       
       --row-heading-color: black;
       --row-heading-text-transform: none;
-      --row-heading-text-weight: 400;
+      --row-heading-font-weight: 400;
     }
 
     .wrapper {

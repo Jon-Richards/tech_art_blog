@@ -21,7 +21,7 @@ type TableBodyRow = {
  *    'Heading For Column 2',
  *    'Heading For Column 3',
  *  ]"
- *  data-body="[
+ *  data-rows="[
  *    {
  *      hasHeading: true,
  *      cells: [
@@ -31,7 +31,6 @@ type TableBodyRow = {
  *      ]
  *    },
  *    {
- *      hasHeading: false,
  *      cells: [
  *        'This is not a heading, it is a normal cell.',
  *        'This is cell two',
