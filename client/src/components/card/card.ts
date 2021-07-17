@@ -75,7 +75,7 @@ export class Card extends LitElement {
         <div class="image">
           <img src="${this.image}">
         </div>
-        <p>
+        <p data-test-hook="description">
           ${this.description}
         </p>
       </jr-panel>

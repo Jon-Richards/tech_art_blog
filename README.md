@@ -29,6 +29,8 @@ things relating to technical art.
   - [Scripts](#scripts)
     - [`start.sh`](#startsh)
     - [`attach.sh`](#attachsh)
+  - [Tests](#tests)
+    - [Client Side](#client-side)
   - [Additional Notes](#additional-notes)
 
 ---
@@ -295,10 +297,33 @@ the specified container supports Bash.)
 $ ./scripts/attach.sh vagrant_web_1
 ```
 
+---
+
+<a name="tests"></a>
+## Tests
+
+### Client Side
+
+Client side testing takes the form of both unit and integration testing.  By
+convention, unit tests are included next to the code they're testing.
+Integration tests are located in the `./client/tests` directory.
+
+Tests are written in [Jest](https://jestjs.io/), with [Puppeteer](https://developers.google.com/web/tools/puppeteer) when a browser environment is necessary.
+
+> Web components require a browser environment to run. At the time of this
+> writing, their unit tests target the corresponding component instance via the "Components" page under the "Style Guide" section.  This means that the server
+> **must** be running for component unit tests to pass.  This may change in a
+> future update.
+
+Running client side tests:
+```
+$ npm run test
+```
+
 <a name="additional_notes"></a>
 ## Additional Notes
 
-- When using static typechecking with the VM, you may need to install the correct
+- When using static type checking with the VM, you may need to install the correct
   version of python and the project's dependencies locally.  Alternatively,
   consider SSHing into the VM and working from there.
 
