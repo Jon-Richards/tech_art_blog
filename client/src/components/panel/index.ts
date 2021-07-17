@@ -1,4 +1,4 @@
-import {LitElement, html, TemplateResult, css, CSSResult} from 'lit-element';
+import {LitElement, html, TemplateResult, css, CSSResultGroup} from 'lit';
 
 /**
  * Renders a simple panel.
@@ -17,7 +17,7 @@ import {LitElement, html, TemplateResult, css, CSSResult} from 'lit-element';
  */
 export class Panel extends LitElement {
   /** Renders the component's styles. */
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       *, *::before, *::after {
         box-sizing: border-box;

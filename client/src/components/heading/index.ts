@@ -2,9 +2,9 @@ import {
   LitElement,
   html,
   TemplateResult,
-  CSSResult,
-} from 'lit-element';
-import {ifDefined} from 'lit-html/directives/if-defined.js';
+  CSSResultGroup,
+} from 'lit';
+import {ifDefined} from 'lit/directives/if-defined.js';
 import {validateLevel} from './validators';
 import {renderStyles} from './styles';
 
@@ -69,7 +69,7 @@ export class Heading extends LitElement {
    * Sets the CSS styles for this component.
    * @returns The computed styles.
    */
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return renderStyles();
   }
 

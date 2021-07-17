@@ -1,4 +1,4 @@
-import {css, CSSResult} from 'lit-element';
+import {css, CSSResultGroup} from 'lit';
 
 /**
  * Renders the styles for the Heading component.\
@@ -24,7 +24,7 @@ import {css, CSSResult} from 'lit-element';
  * border beneath it.
  * @returns The rendered styles.
  */
-export function renderStyles(): CSSResult {
+export function renderStyles(): CSSResultGroup {
   return css`
     *, *::before, *::after {
       box-sizing: border-box;

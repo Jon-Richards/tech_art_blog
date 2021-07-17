@@ -3,9 +3,9 @@ import {
   html,
   TemplateResult,
   css,
-  CSSResult,
+  CSSResultGroup,
   PropertyDeclarations,
-} from 'lit-element';
+} from 'lit';
 
 export interface Image {
   href: string;
@@ -39,7 +39,7 @@ export class Card extends LitElement {
   /**
    * Compiles the CSS used by the card.
    */
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return css`
       *. *::before, *::after {
         box-sizing: border-box;

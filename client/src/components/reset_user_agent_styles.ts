@@ -1,11 +1,11 @@
-import {css, CSSResult} from 'lit-element';
+import {css, CSSResultGroup} from 'lit';
 
 /**
  * Returns a CSS string consisting of resets for common user agent stylesheet
  * styles.
  * @returns Styles for resetting common user agent styles.
  */
-export function resetUserAgentStyles(): CSSResult {
+export function resetUserAgentStyles(): CSSResultGroup {
   return css`
     ::slotted(*, *::before, *::after) {
       box-sizing: border-box;

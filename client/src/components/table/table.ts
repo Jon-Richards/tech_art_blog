@@ -2,9 +2,9 @@ import {
   LitElement,
   html,
   TemplateResult,
-  CSSResult,
+  CSSResultGroup,
   PropertyDeclarations,
-} from 'lit-element';
+} from 'lit';
 import {renderStyles} from './styles';
 
 type TableBodyRow = {
@@ -86,7 +86,7 @@ export class Table extends LitElement {
   }
 
   /** Renders the component's styles. */
-  static get styles(): CSSResult {
+  static get styles(): CSSResultGroup {
     return renderStyles();
   }
 

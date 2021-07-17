@@ -1,10 +1,10 @@
-import {css, CSSResult} from 'lit-element';
+import {css, CSSResultGroup} from 'lit';
 
 /**
  * Renders the table styles.
  * @returns {CSSResult} The compiled CSS.
  */
-export function renderStyles(): CSSResult {
+export function renderStyles(): CSSResultGroup {
   return css`
     table, caption, tbody, tfoot, thead, tr, th, td {
       margin: 0;
